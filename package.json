@@ -3,7 +3,11 @@
   "version": "0.0.2",
   "description": "react components to speed up web development",
   "main": "./src/index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "npm run build:babel && npm run build:copy",
+    "build:babel": "NODE_ENV=release babel ./src --out-dir ./build",
+    "build:copy": "babel-node ./scripts/copy.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vivaxy/react-pianist.git"
@@ -22,5 +26,16 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.11.5",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-function-bind": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "fs-extra": "^0.30.0"
   }
 }
