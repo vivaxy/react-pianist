@@ -1,0 +1,16 @@
+/**
+ * @since 2016-09-03 09:06
+ * @author vivaxy
+ */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}

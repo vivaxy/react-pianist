@@ -1,0 +1,26 @@
+{
+  "name": "react-pianist",
+  "version": "0.0.0",
+  "description": "react components to speed up web development",
+  "main": "./src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivaxy/react-pianist.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "web"
+  ],
+  "author": "vivaxy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vivaxy/react-pianist/issues"
+  },
+  "homepage": "https://github.com/vivaxy/react-pianist#readme",
+  "peerDependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}
