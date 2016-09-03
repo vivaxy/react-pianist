@@ -7,21 +7,22 @@ import React, { Component, PropTypes } from 'react';
 
 export default class BorderBox extends Component {
 
-    static propTypes = {
-
-    };
+    static propTypes = {};
 
     render () {
 
         const {
             children,
+            style,
+            ...otherProps,
         } = this.props;
 
-        const style = {
+        const computedStyle = {
             position: 'relative',
+            ...style,
         };
 
-        return <div style={style}>
+        return <div style={computedStyle} {...otherProps}>
             {children}
         </div>
     }

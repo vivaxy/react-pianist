@@ -22,6 +22,8 @@ export default class BorderLine extends Component {
         const {
             position,
             color,
+            style,
+            ...otherProps,
         } = this.props;
 
         const defaultStyle = {
@@ -29,11 +31,11 @@ export default class BorderLine extends Component {
             backgroundColor: color,
         };
 
-        let style = {};
+        let computedStyle = {};
 
         switch (position) {
             case LEFT:
-                style = {
+                computedStyle = {
                     ...defaultStyle,
                     top: '0',
                     left: '0',
@@ -43,10 +45,11 @@ export default class BorderLine extends Component {
                     transform: 'scaleX(0.5)',
                     WebkitTransformOrigin: 'left',
                     transformOrigin: 'left',
+                    ...style,
                 };
                 break;
             case RIGHT:
-                style = {
+                computedStyle = {
                     ...defaultStyle,
                     right: '0',
                     top: '0',
@@ -56,10 +59,11 @@ export default class BorderLine extends Component {
                     transform: 'scaleX(0.5)',
                     WebkitTransformOrigin: 'right',
                     transformOrigin: 'right',
+                    ...style,
                 };
                 break;
             case TOP:
-                style = {
+                computedStyle = {
                     ...defaultStyle,
                     top: '0',
                     left: '0',
@@ -69,10 +73,11 @@ export default class BorderLine extends Component {
                     transform: 'scaleY(0.5)',
                     WebkitTransformOrigin: 'top',
                     transformOrigin: 'top',
+                    ...style,
                 };
                 break;
             case BOTTOM:
-                style = {
+                computedStyle = {
                     ...defaultStyle,
                     bottom: '0',
                     left: '0',
@@ -82,12 +87,13 @@ export default class BorderLine extends Component {
                     transform: 'scaleY(0.5)',
                     WebkitTransformOrigin: 'bottom',
                     transformOrigin: 'bottom',
+                    ...style,
                 };
                 break;
             default:
                 break;
         }
 
-        return <div style={style}></div>
+        return <div style={computedStyle} {...otherProps}></div>
     }
 }
