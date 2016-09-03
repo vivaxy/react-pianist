@@ -7,7 +7,7 @@
     "build": "npm run build:babel && npm run build:copy",
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./build",
     "build:copy": "babel-node ./scripts/copy.js",
-    "publish": "sh ./scripts/publish"
+    "publish": "sh ./scripts/publish.sh"
   },
   "repository": {
     "type": "git",
