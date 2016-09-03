@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/vivaxy/react-pianist#readme",
   "peerDependencies": {
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react": "*",
+    "react-dom": "*"
   }
 }
