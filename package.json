@@ -7,7 +7,11 @@
     "build": "npm run build:babel && npm run build:copy",
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./build",
     "build:copy": "babel-node ./scripts/copy.js",
-    "publish": "sh ./scripts/publish.sh"
+    "publish": "sh ./scripts/publish.sh",
+    "docs:dev": "NODE_ENV=development webpack-dev-server --progress",
+    "docs:build": "npm run docs:build:clean && npm run docs:build:webpack",
+    "docs:build:clean": "rm -rf ./docs/release && mkdir ./docs/release",
+    "docs:build:webpack": "webpack --progress --display-chunks --display-reasons --display-error-details --display-modules --display-exclude > ./docs/release/build.log"
   },
   "repository": {
     "type": "git",
@@ -30,13 +34,34 @@
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
+    "babel-loader": "^6.2.5",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.11.5",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-function-bind": "^6.8.0",
+    "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "fs-extra": "^0.30.0"
+    "css-loader": "^0.24.0",
+    "file-loader": "^0.9.0",
+    "fs-extra": "^0.30.0",
+    "glob": "^7.0.6",
+    "html-webpack-plugin": "^2.22.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-hot-loader": "^3.0.0-beta.3",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-devtools": "^3.3.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "dependencies": {
+    "warning": "^3.0.0"
   }
 }

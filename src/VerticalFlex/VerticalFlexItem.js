@@ -4,6 +4,9 @@
  */
 
 import React, { Component, PropTypes } from 'react';
+import warning from 'warning';
+
+import i18n from '../config/i18n';
 
 export default class VerticalListItem extends Component {
 
@@ -11,6 +14,10 @@ export default class VerticalListItem extends Component {
         flex: PropTypes.number,
         height: PropTypes.number,
     };
+
+    componentDidMount () {
+        warning(!this.props.flex || !this.props.height, i18n('flex', 'height'));
+    }
 
     static defaultProps = {};
 
