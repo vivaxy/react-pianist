@@ -3,4 +3,3 @@
  * @author vivaxy
  */
 
-export const SOMEONE_S_HOME = (name) => `${name}的个人主页`;

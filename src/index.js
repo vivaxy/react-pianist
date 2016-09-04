@@ -6,3 +6,5 @@
 export BorderBox from './BorderBox';
 export HorizontalFlex from './HorizontalFlex';
 export VerticalFlex from './VerticalFlex';
+export Toast from './Toast';
+export colors from './colors';

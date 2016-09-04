@@ -6,7 +6,7 @@
 import React, { Component, PropTypes } from 'react';
 import warning from 'warning';
 
-import i18n from '../config/i18n';
+import * as i18n from '../config/i18n';
 
 export default class HorizontalListItem extends Component {
 
@@ -18,7 +18,8 @@ export default class HorizontalListItem extends Component {
     static defaultProps = {};
 
     componentDidMount () {
-        warning(!this.props.flex || !this.props.height, i18n('flex', 'height'));
+        warning(this.props.flex === undefined || this.props.height === undefined, i18n.ONE_OR_THE_OTHER('flex', 'height'));
+        warning(this.props.flex !== undefined || this.props.height !== undefined, i18n.MUST_DEFINE_ONE('flex', 'height'));
     }
 
     render () {

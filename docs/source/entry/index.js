@@ -7,56 +7,31 @@ import React, { Component } from 'react';
 
 import connect from '../library/connect';
 import render from '../library/render';
-import setTitle from '../library/setTitle';
-
-import { VerticalFlexBox, VerticalFlexItem } from 'react-pianist/VerticalFlex';
-import { HorizontalFlexBox, HorizontalFlexItem } from 'react-pianist/HorizontalFlex';
-import { BorderBox, BorderLine } from 'react-pianist/BorderBox';
-
-import i18n from '../i18n';
+import redirect from '../library/redirect';
 
 @connect(state => ({}), {})
 class Index extends Component {
 
     render () {
 
-        setTitle(i18n.SOMEONE_S_HOME('react-pianist'));
+        const componentList = [
+            'VerticalFlex',
+            'HorizontalFlex',
+            'BorderBox',
+            'Toast',
+        ];
 
-        const navigationItemStyle = {
-            textAlign: 'center',
-            lineHeight: '50px',
-        };
+        return <div>
+            {componentList.map((component, index) => {
+                return <div key={`component-${index}`} onClick={::this.redirect(component)}>{component}</div>
+            })}
+        </div>
+    }
 
-        return <VerticalFlexBox style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-        }}>
-            <VerticalFlexItem flex={1}>
-                test
-            </VerticalFlexItem>
-            <VerticalFlexItem height={50}>
-                <BorderBox style={{
-                    backgroundColor: '#f9f9f9',
-                }}>
-                    <BorderLine position={'top'} color={'#efefef'}/>
-                    <HorizontalFlexBox>
-                        <HorizontalFlexItem flex={1} style={navigationItemStyle}>
-                            home
-                        </HorizontalFlexItem>
-                        <HorizontalFlexItem flex={1} style={navigationItemStyle}>
-                            contact
-                        </HorizontalFlexItem>
-                        <HorizontalFlexItem flex={1} style={navigationItemStyle}>
-                            discovery
-                        </HorizontalFlexItem>
-                        <HorizontalFlexItem flex={1} style={navigationItemStyle}>
-                            me
-                        </HorizontalFlexItem>
-                    </HorizontalFlexBox>
-                </BorderBox>
-            </VerticalFlexItem>
-        </VerticalFlexBox>
+    redirect (component) {
+        return () => {
+            redirect(`/${component}.html`);
+        }
     }
 
 }
