@@ -7,7 +7,7 @@ import env from './environment';
 import * as environment from '../config/environment';
 
 const DEVELOPMENT_PATH_SUFFIX = '/docs/release/html';
-const PRODUCTION_PATH_SUFFIX = '/docs/release/html';
+const PRODUCTION_PATH_SUFFIX = '/react-pianist/release/html';
 
 export default (path) => {
     let realPath;
