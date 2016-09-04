@@ -1,49 +1,39 @@
 # 0.0.5
 
-## [core]
-- add defaultProps to components
-- add docs
-- update babelrc with `react-hot-loader/babel`
-- add readme
-- add warning to wrong component props
-
-## [component]
-- add Toast
-- add colors
-- HorizontalFlex: add props validation
-- VerticalFlex: add props validation
-
-## [docs]
-- add docs file tree
-- add index list
+- [core] add defaultProps to components
+- [core] add docs
+- [core] update babelrc with `react-hot-loader/babel`
+- [core] add readme
+- [core] add warning to wrong component props
+- [component] add Toast
+- [component] add colors
+- [component] HorizontalFlex: add props validation
+- [component] VerticalFlex: add props validation
+- [docs] add docs file tree
+- [docs] add index list
 
 # 0.0.4
 
-## [component]
-- BorderBox: support custom style, and props
+- [component] BorderBox: support custom style, and props
 
 # 0.0.3
 
-## [core]
-- add build script
-- add publish script
-- add changelog.md
-- add babel
-- add editor config
+- [core] add build script
+- [core] add publish script
+- [core] add changelog.md
+- [core] add babel
+- [core] add editor config
 
 # 0.0.2
 
-## [etc]
-optimize package.json
+- [core] optimize package.json
 
 # 0.0.1
 
-## [component]
-- BorderBox
-- HorizontalFlex
-- VerticalFlex
+- [component] BorderBox
+- [component] HorizontalFlex
+- [component] VerticalFlex
 
 # 0.0.0
 
-## [core]
-- initialize project
+- [core] initialize project
