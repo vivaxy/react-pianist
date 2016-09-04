@@ -2,10 +2,10 @@
   "name": "react-pianist",
   "version": "0.0.4",
   "description": "react components to speed up web development",
-  "main": "./src/index.js",
+  "main": "./source/index.js",
   "scripts": {
     "build": "npm run build:babel && npm run build:copy",
-    "build:babel": "NODE_ENV=release babel ./src --out-dir ./build",
+    "build:babel": "NODE_ENV=release babel ./source --out-dir ./build",
     "build:copy": "babel-node ./scripts/copy.js",
     "publish": "sh ./scripts/publish.sh",
     "docs:dev": "NODE_ENV=development webpack-dev-server --progress",

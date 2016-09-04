@@ -40,7 +40,7 @@ react-pianist provides react components to speed up web development
 
 ## source code
 
-Source code is in `./src` directory. Each component should has its own subdirectory.
+Source code is in `./source` directory. Each component should has its own subdirectory.
 Each directory should has an `index.js`, which import js from this folder and export to the outside.
 
 ### publish

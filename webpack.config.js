@@ -79,8 +79,8 @@ let webpackConfig = {
     ],
     resolve: {
         alias: {
-            // react-pianist requires will be searched in src folder, not in node_modules
-            'react-pianist': path.resolve(__dirname, './src'),
+            // react-pianist requires will be searched in source folder, not in node_modules
+            'react-pianist': path.resolve(__dirname, './source'),
         },
     },
 };
