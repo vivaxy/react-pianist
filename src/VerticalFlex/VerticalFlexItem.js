@@ -12,6 +12,8 @@ export default class VerticalListItem extends Component {
         height: PropTypes.number,
     };
 
+    static defaultProps = {};
+
     render () {
 
         const {

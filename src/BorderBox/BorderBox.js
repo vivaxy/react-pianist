@@ -9,6 +9,8 @@ export default class BorderBox extends Component {
 
     static propTypes = {};
 
+    static defaultProps = {};
+
     render () {
 
         const {

@@ -9,6 +9,8 @@ export default class HorizontalList extends Component {
 
     static propTypes = {};
 
+    static defaultProps = {};
+
     render () {
 
         const boxStyle = {

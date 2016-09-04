@@ -17,6 +17,8 @@ export default class BorderLine extends Component {
         color: PropTypes.string.isRequired,
     };
 
+    static defaultProps = {};
+
     render () {
 
         const {
