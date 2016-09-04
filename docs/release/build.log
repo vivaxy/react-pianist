@@ -1,11 +1,11 @@
-Hash: a1748f9fe3ac390a29dd
+Hash: 0a85fd8631f3244980d0
 Version: webpack 1.13.2
-Time: 12213ms
+Time: 10658ms
                                                      Asset       Size  Chunks             Chunk Names
 image/vivaxy.20150726-e85e6ede6d8c1d4a1197425b3095d6c9.jpg    23.8 kB          [emitted]  
                                         js/VerticalFlex.js    7.87 kB       0  [emitted]  VerticalFlex
                                               js/common.js     267 kB       1  [emitted]  common
-                                               js/index.js    3.98 kB       2  [emitted]  index
+                                               js/index.js    3.99 kB       2  [emitted]  index
                                     js/VerticalFlex.js.map    31.7 kB       0  [emitted]  VerticalFlex
                                           js/common.js.map    2.59 MB       1  [emitted]  common
                                            js/index.js.map    15.3 kB       2  [emitted]  index
@@ -2156,11 +2156,11 @@ chunk    {1} js/common.js, js/common.js.map (common) 986 kB [rendered]
         cjs require ./_replacer [501] ./~/babel-polyfill/~/core-js/modules/core.regexp.escape.js 3:14-36
   [503] ./~/whatwg-fetch/fetch.js 11.6 kB {1} [built]
         single entry whatwg-fetch [0] multi common
-chunk    {2} js/index.js, js/index.js.map (index) 7.34 kB {1} [rendered]
+chunk    {2} js/index.js, js/index.js.map (index) 7.35 kB {1} [rendered]
     [0] multi index 28 bytes {2} [built]
   [504] ./docs/source/entry/index.js 3.61 kB {2} [built]
         single entry /Users/vivaxy/code/github/react-pianist/docs/source/entry/index.js [0] multi index
-  [505] ./docs/source/library/redirect.js 1.77 kB {2} [built]
+  [505] ./docs/source/library/redirect.js 1.78 kB {2} [built]
         cjs require ../library/redirect [504] ./docs/source/entry/index.js 22:17-47
   [506] ./docs/source/library/environment.js 1.32 kB {2} [built]
         cjs require ./environment [505] ./docs/source/library/redirect.js 7:19-43
