@@ -1,3 +1,8 @@
+# 0.0.7
+
+- [component] HorizontalFlex: fix width props
+- [docs] fix dev page URL
+
 # 0.0.6
 
 - [component] List: add

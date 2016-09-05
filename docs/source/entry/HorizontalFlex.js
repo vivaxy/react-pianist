@@ -41,6 +41,14 @@ class HorizontalFlex extends Component {
                     lineHeight: '50px',
                 }}
             >this block auto expand too</HorizontalFlexItem>
+            <HorizontalFlexItem
+                width={50}
+                style={{
+                    backgroundColor: colors.EMERALD,
+                    color: colors.WHITE,
+                    lineHeight: '50px',
+                }}
+            >this block will not expand</HorizontalFlexItem>
         </HorizontalFlexBox>
     }
 

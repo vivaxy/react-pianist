@@ -12,21 +12,27 @@ export default class HorizontalListItem extends Component {
 
     static propTypes = {
         flex: PropTypes.number,
-        height: PropTypes.number,
+        width: PropTypes.number,
     };
 
     static defaultProps = {};
 
     componentDidMount () {
-        warning(this.props.flex === undefined || this.props.height === undefined, i18n.ONE_OR_THE_OTHER('flex', 'height'));
-        warning(this.props.flex !== undefined || this.props.height !== undefined, i18n.MUST_DEFINE_ONE('flex', 'height'));
+
+        const {
+            width,
+            flex,
+        } = this.props;
+
+        warning(flex === undefined || width === undefined, i18n.ONE_OR_THE_OTHER('flex', 'width'));
+        warning(flex !== undefined || width !== undefined, i18n.MUST_DEFINE_ONE('flex', 'width'));
     }
 
     render () {
 
         const {
             flex,
-            height,
+            width,
             children,
             style,
             ...otherProps
@@ -43,7 +49,7 @@ export default class HorizontalListItem extends Component {
             };
         } else {
             childStyle = {
-                height,
+                width,
                 ...style
             };
         }
