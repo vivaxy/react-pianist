@@ -2,6 +2,8 @@
 
 - [component] List: add
 - [docs] List: add
+- [docs] VerticalFlex: optimize style
+- [docs] HorizontalFlex: add
 
 # 0.0.5
 
