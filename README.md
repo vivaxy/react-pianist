@@ -55,9 +55,9 @@ source code is in `./docs/source` directory. Built files is in `./docs/release`
 
 ### local development
 
-run `npm run docs:dev`
+run `npm run dev`
 open `http://127.0.0.1:8080/docs/release/html/index.html` in browser
 
 ### build release version
 
-run `npm run docs:build`
+run `npm run docs`
