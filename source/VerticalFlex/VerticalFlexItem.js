@@ -39,6 +39,7 @@ export default class VerticalListItem extends Component {
                 WebkitBoxFlex: flex,
                 WebkitFlex: flex,
                 flex: flex,
+                height: 0,
                 ...style
             };
         } else {

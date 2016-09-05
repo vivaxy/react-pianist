@@ -45,6 +45,7 @@ export default class HorizontalListItem extends Component {
                 WebkitBoxFlex: flex,
                 WebkitFlex: flex,
                 flex: flex,
+                width: 0,
                 ...style
             };
         } else {

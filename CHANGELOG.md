@@ -1,6 +1,8 @@
 # 0.0.7
 
 - [component] HorizontalFlex: fix width props
+- [component] HorizontalFlex: fix flex width
+- [component] VerticalFlex: fix flex height
 - [docs] fix dev page URL
 
 # 0.0.6
