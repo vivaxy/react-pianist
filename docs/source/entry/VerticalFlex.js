@@ -28,12 +28,18 @@ class VerticalFlex extends Component {
                 flex={1}
                 style={{
                     backgroundColor: colors.TURQUOISE,
+                    color: colors.WHITE,
+                    textAlign: 'center',
+                    lineHeight: '50px',
                 }}
             >this block auto expand</VerticalFlexItem>
             <VerticalFlexItem
                 height={50}
                 style={{
                     backgroundColor: colors.EMERALD,
+                    color: colors.WHITE,
+                    textAlign: 'center',
+                    lineHeight: '50px',
                 }}
             >this block will not expand</VerticalFlexItem>
         </VerticalFlexBox>

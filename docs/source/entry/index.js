@@ -20,6 +20,7 @@ class Index extends Component {
             'HorizontalFlex',
             'BorderBox',
             'Toast',
+            'List',
         ];
 
         const itemStyle = {
