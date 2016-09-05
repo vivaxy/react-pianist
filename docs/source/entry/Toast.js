@@ -3,43 +3,63 @@
  * @author vivaxy
  */
 
-
 import React, { Component } from 'react';
 
 import connect from '../library/connect';
 import render from '../library/render';
 import setTitle from '../library/setTitle';
+import action from '../action';
 
-import { VerticalFlexBox, VerticalFlexItem } from 'react-pianist/VerticalFlex';
+import Toast from 'react-pianist/Toast';
 import colors from 'react-pianist/colors';
+import { Button } from 'react-pianist/Button';
 
-@connect(state => ({}), {})
-class Toast extends Component {
+@connect(state => ({
+    toastState: state.toast,
+}), {
+    showToastAction: action.toast.showToast,
+})
+class ToastDemo extends Component {
 
     render () {
 
-        setTitle(`VerticalFlexBox`);
+        setTitle(`Toast`);
 
-        return <VerticalFlexBox style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-        }}>
-            <VerticalFlexItem
-                flex={1}
-                style={{
-                    backgroundColor: colors.TURQUOISE,
-                }}
-            >this block auto expand</VerticalFlexItem>
-            <VerticalFlexItem
-                height={50}
-                style={{
-                    backgroundColor: colors.EMERALD,
-                }}
-            >this block will not expand</VerticalFlexItem>
-        </VerticalFlexBox>
+        const {
+            toastState,
+        } = this.props;
+
+        return <div>
+            <div style={{
+                textAlign: 'center',
+                marginTop: '20px',
+            }}>
+                <Button onClick={::this.toast}>toast</Button>
+            </div>
+            <div style={{
+                textAlign: 'center',
+                marginTop: '20px',
+            }}>
+                <Button onClick={::this.toastAnother}>toast another</Button>
+            </div>
+            <Toast open={toastState.show}>{toastState.message}</Toast>
+        </div>
+    }
+
+    toast () {
+        const {
+            showToastAction,
+        } = this.props;
+        showToastAction('test toast');
+    }
+
+    toastAnother () {
+        const {
+            showToastAction,
+        } = this.props;
+        showToastAction('test another toast');
     }
 
 }
 
-render(Toast);
+render(ToastDemo);

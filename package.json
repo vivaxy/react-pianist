@@ -5,13 +5,13 @@
   "main": "./source/index.js",
   "scripts": {
     "build": "npm run build:babel && npm run build:copy",
-    "build:babel": "NODE_ENV=release babel ./source --out-dir ./build",
+    "build:babel": "NODE_ENV=production babel ./source --out-dir ./build",
     "build:copy": "babel-node ./scripts/copy.js",
     "publish": "sh ./scripts/publish.sh",
-    "docs:dev": "NODE_ENV=development webpack-dev-server --progress",
-    "docs:build": "npm run docs:build:clean && npm run docs:build:webpack",
-    "docs:build:clean": "rm -rf ./docs/release && mkdir ./docs/release",
-    "docs:build:webpack": "webpack --progress --display-chunks --display-reasons --display-error-details --display-modules --display-exclude > ./docs/release/build.log"
+    "dev": "NODE_ENV=development webpack-dev-server --progress",
+    "docs": "npm run docs:clean && npm run docs:webpack",
+    "docs:clean": "rm -rf ./docs/release && mkdir ./docs/release",
+    "docs:webpack": "webpack --progress --display-chunks --display-reasons --display-error-details --display-modules --display-exclude > ./docs/release/build.log"
   },
   "repository": {
     "type": "git",

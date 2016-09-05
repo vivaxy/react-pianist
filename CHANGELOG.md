@@ -1,10 +1,12 @@
 # 0.0.6
 
 - [component] List: add
+- [component] Toast: add
 - [docs] List: add
 - [docs] VerticalFlex: optimize style
 - [docs] HorizontalFlex: add
 - [docs] BorderBox: add
+- [docs] Toast: add
 
 # 0.0.5
 

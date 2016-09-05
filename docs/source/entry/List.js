@@ -11,7 +11,7 @@ import render from '../library/render';
 import redirect from '../library/redirect';
 
 @connect(state => ({}), {})
-class Index extends Component {
+class ListDemo extends Component {
 
     render () {
 
@@ -48,4 +48,4 @@ class Index extends Component {
 
 }
 
-render(Index);
+render(ListDemo);
