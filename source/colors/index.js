@@ -4,6 +4,7 @@
  */
 
 export default {
+    BORDER: '#cacaca',
     TURQUOISE: '#1abc9c',
     EMERALD: '#2ecc71',
     PETER_RIVER: '#3498db',

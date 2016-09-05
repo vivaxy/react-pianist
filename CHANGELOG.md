@@ -1,3 +1,8 @@
+# 0.0.6
+
+- [component] List: add
+- [docs] List: add
+
 # 0.0.5
 
 - [core] add defaultProps to components

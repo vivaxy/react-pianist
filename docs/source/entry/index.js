@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from 'react';
+import { List, Item } from 'react-pianist/List';
 
 import connect from '../library/connect';
 import render from '../library/render';
@@ -21,11 +22,21 @@ class Index extends Component {
             'Toast',
         ];
 
-        return <div>
+        const itemStyle = {
+            height: '46px',
+            lineHeight: '46px',
+            paddingLeft: '15px',
+        };
+
+        return <List>
             {componentList.map((component, index) => {
-                return <div key={`component-${index}`} onClick={::this.redirect(component)}>{component}</div>
+                return <Item
+                    key={`component-${index}`}
+                    onClick={::this.redirect(component)}
+                    style={itemStyle}
+                >{component}</Item>
             })}
-        </div>
+        </List>
     }
 
     redirect (component) {
