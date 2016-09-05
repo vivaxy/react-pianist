@@ -1,6 +1,6 @@
 {
   "name": "react-pianist",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "react components to speed up web development",
   "main": "./source/index.js",
   "scripts": {
