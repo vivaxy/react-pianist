@@ -10,36 +10,30 @@ import connect from '../library/connect';
 import render from '../library/render';
 import setTitle from '../library/setTitle';
 
-import { VerticalFlexBox, VerticalFlexItem } from 'react-pianist/VerticalFlex';
+import { BorderBox, BorderLine } from 'react-pianist/BorderBox';
 import colors from 'react-pianist/colors';
 
 @connect(state => ({}), {})
-class BorderBox extends Component {
+class BorderBoxDemo extends Component {
 
     render () {
 
-        setTitle(`VerticalFlexBox`);
+        setTitle(`BorderBox`);
 
-        return <VerticalFlexBox style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
+        return <BorderBox style={{
+            width: '100px',
+            height: '100px',
         }}>
-            <VerticalFlexItem
-                flex={1}
-                style={{
-                    backgroundColor: colors.TURQUOISE,
-                }}
-            >this block auto expand</VerticalFlexItem>
-            <VerticalFlexItem
-                height={50}
-                style={{
-                    backgroundColor: colors.EMERALD,
-                }}
-            >this block will not expand</VerticalFlexItem>
-        </VerticalFlexBox>
+            <BorderLine color={colors.BORDER} position={'top'}/>
+            <BorderLine color={colors.BORDER} position={'bottom'}/>
+            <BorderLine color={colors.BORDER} position={'left'}/>
+            <BorderLine color={colors.BORDER} position={'right'}/>
+            <div>
+                there are lines around
+            </div>
+        </BorderBox>
     }
 
 }
 
-render(BorderBox);
+render(BorderBoxDemo);

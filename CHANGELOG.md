@@ -4,6 +4,7 @@
 - [docs] List: add
 - [docs] VerticalFlex: optimize style
 - [docs] HorizontalFlex: add
+- [docs] BorderBox: add
 
 # 0.0.5
 
