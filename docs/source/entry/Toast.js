@@ -11,7 +11,7 @@ import setTitle from '../library/setTitle';
 import sleep from '../library/sleep';
 import action from '../action';
 
-import Toast from 'react-pianist/Toast';
+import Toast, { AutoHideToast } from 'react-pianist/Toast';
 import colors from 'react-pianist/colors';
 import { Button } from 'react-pianist/Button';
 
@@ -64,34 +64,29 @@ class ToastDemo extends Component {
             }}>
                 <Button onClick={::this.hideControlledToast}>HIDE CONTROLLED TOAST</Button>
             </div>
-            <Toast show={toastState.show}>{toastState.message}</Toast>
-            <Toast autoHide={false} show={controlledToastShown} style={{
-                width: '220px',
-                textAlign: 'center',
-            }}>{`THIS IS A CONTROLLED TOAST`}</Toast>
+            <AutoHideToast show={toastState.show} onAutoHide={::this.onToastHide}>{toastState.message}</AutoHideToast>
+            <Toast
+                show={controlledToastShown}
+                style={{
+                    width: '220px',
+                    textAlign: 'center',
+                }}
+            >{`THIS IS A CONTROLLED TOAST`}</Toast>
         </div>
     }
 
-    async toast () {
+    toast () {
         const {
             showToastAction,
-            hideToastAction,
         } = this.props;
-        hideToastAction();
-        showToastAction('test toast');
-        await sleep(3300);
-        hideToastAction();
+        showToastAction('TEST TOAST');
     }
 
-    async toastAnother () {
+    toastAnother () {
         const {
             showToastAction,
-            hideToastAction,
         } = this.props;
-        hideToastAction();
-        showToastAction('test another toast');
-        await sleep(3300);
-        hideToastAction();
+        showToastAction('TEST ANOTHER TOAST');
     }
 
     showControlledToast () {
@@ -104,6 +99,16 @@ class ToastDemo extends Component {
         this.setState({
             controlledToastShown: false,
         });
+    }
+
+    onToastHide() {
+        const {
+            hideToastAction,
+        } = this.props;
+
+        console.log('hide');
+        hideToastAction();
+
     }
 
 }

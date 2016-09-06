@@ -1,5 +1,6 @@
 # 0.0.7
 
+- [core] fix sleep
 - [component] colors: add commonly used colors
 - [component] HorizontalFlex: fix width props
 - [component] HorizontalFlex: fix flex width
@@ -7,7 +8,7 @@
 - [component] Button: add ButtonGroup
 - [component] Button: optimize style
 - [component] Toast: optimize style
-- [component] Toast: support not auto hide, as controlled hidden
+- [component] AutoHideToast: add
 - [component] Switchery: add
 - [docs] fix dev page URL
 - [docs] BorderBox: optimize style

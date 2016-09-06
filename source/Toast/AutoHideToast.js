@@ -1,47 +1,66 @@
 /**
- * @since 2016-09-04 09:34
+ * @since 2016-09-06 13:57
  * @author vivaxy
  */
 
 import React, { Component, PropTypes } from 'react';
+import warning from 'warning';
 
 import sleep from '../library/sleep';
+import i18n from '../config/i18n';
 import colors from '../colors';
 
-export default class Toast extends Component {
+export default class AutoHideToast extends Component {
 
     state = {
         show: false,
     };
 
     static propTypes = {
-        show: PropTypes.bool,
         animationDuration: PropTypes.number,
+        show: PropTypes.bool,
+        autoHideDuration: PropTypes.number,
         top: PropTypes.number,
+        onAutoHide: PropTypes.func,
     };
 
     static defaultProps = {
         show: false,
         animationDuration: 300,
+        autoHideDuration: 3000,
         top: 50,
+        onAutoHide: () => {
+
+        }
     };
+
+    componentWillMount () {
+        this.setState({
+            show: this.props.show,
+        });
+    }
 
     componentWillReceiveProps (nextProps) {
         if (nextProps.show) {
-            this.clearTimeout();
+            if (this.state.show) {
+                this.clearTimeout();
+                // this.props.onAutoHide();
+            }
             this.showToast();
         } else {
-            this.closeToast();
+            if (this.state.show) {
+                this.clearTimeout();
+                this.hideToast();
+            }
         }
     }
 
     clearTimeout () {
-        if (this._animationTimeout) {
-            clearTimeout(this._animationTimeout);
-        }
+        clearTimeout(this._timeout);
+        clearTimeout(this._animationTimeout);
     }
 
-    async closeToast () {
+    async hideToast () {
         this._root.style.opacity = '0';
         await sleep(this.props.animationDuration, (timer) => {
             this._animationTimeout = timer;
@@ -49,6 +68,7 @@ export default class Toast extends Component {
         this.setState({
             show: false,
         });
+        this.props.onAutoHide();
     }
 
     async showToast () {
@@ -57,6 +77,10 @@ export default class Toast extends Component {
         });
         await sleep(0);
         this._root.style.opacity = '1';
+        await sleep(this.props.autoHideDuration, (timer) => {
+            this._timeout = timer;
+        });
+        await this.hideToast();
     }
 
     render () {
@@ -67,14 +91,12 @@ export default class Toast extends Component {
             children,
             top,
             style,
-            show: showProp,
+            show: showProps,
+            autoHideDuration,
             animationDuration,
+            onAutoHide,
             ...otherProps,
         } = this.props;
-
-        const {
-            show,
-        } = this.state;
 
         const defaultStyle = {
             display: 'none',
@@ -92,6 +114,10 @@ export default class Toast extends Component {
             color: colors.WHITE,
             fontSize: '14px',
         };
+
+        const {
+            show,
+        } = this.state;
 
         const computedStyle = {
             ...defaultStyle,
