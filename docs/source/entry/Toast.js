@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import connect from '../library/connect';
 import render from '../library/render';
 import setTitle from '../library/setTitle';
+import sleep from '../library/sleep';
 import action from '../action';
 
 import Toast from 'react-pianist/Toast';
@@ -18,12 +19,21 @@ import { Button } from 'react-pianist/Button';
     toastState: state.toast,
 }), {
     showToastAction: action.toast.showToast,
+    hideToastAction: action.toast.hideToast,
 })
 class ToastDemo extends Component {
+
+    state = {
+        controlledToastShown: false,
+    };
 
     render () {
 
         setTitle(`Toast`);
+
+        const {
+            controlledToastShown,
+        } = this.state;
 
         const {
             toastState,
@@ -42,22 +52,58 @@ class ToastDemo extends Component {
             }}>
                 <Button onClick={::this.toastAnother}>TOAST ANOTHER</Button>
             </div>
-            <Toast open={toastState.show}>{toastState.message}</Toast>
+            <div style={{
+                textAlign: 'center',
+                marginTop: '20px',
+            }}>
+                <Button onClick={::this.showControlledToast}>SHOW CONTROLLED TOAST</Button>
+            </div>
+            <div style={{
+                textAlign: 'center',
+                marginTop: '20px',
+            }}>
+                <Button onClick={::this.hideControlledToast}>HIDE CONTROLLED TOAST</Button>
+            </div>
+            <Toast show={toastState.show}>{toastState.message}</Toast>
+            <Toast autoHide={false} show={controlledToastShown} style={{
+                width: '220px',
+                textAlign: 'center',
+            }}>{`THIS IS A CONTROLLED TOAST`}</Toast>
         </div>
     }
 
-    toast () {
+    async toast () {
         const {
             showToastAction,
+            hideToastAction,
         } = this.props;
+        hideToastAction();
         showToastAction('test toast');
+        await sleep(3300);
+        hideToastAction();
     }
 
-    toastAnother () {
+    async toastAnother () {
         const {
             showToastAction,
+            hideToastAction,
         } = this.props;
+        hideToastAction();
         showToastAction('test another toast');
+        await sleep(3300);
+        hideToastAction();
+    }
+
+    showControlledToast () {
+        this.setState({
+            controlledToastShown: true,
+        });
+    }
+
+    hideControlledToast () {
+        this.setState({
+            controlledToastShown: false,
+        });
     }
 
 }

@@ -9,26 +9,19 @@ import Toast from 'react-pianist/Toast';
 import connect from '../library/connect';
 import action from '../action';
 
-@connect(state => ({}), {
-    hideToastAction: action.toast.hideToast,
-})
+@connect(state => ({}), {})
 export default class EntryWrapper extends Component {
 
     render () {
 
         let {
             children,
-            toastState,
-            hideToastAction,
         } = this.props;
 
         return <div>
             <div>
                 {children}
             </div>
-            <Toast open={toastState.show}>
-                {toastState.message}
-            </Toast>
         </div>
     }
 

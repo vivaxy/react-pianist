@@ -15,7 +15,7 @@ import colors from 'react-pianist/colors';
 import i18n from '../i18n';
 
 @connect(state => ({}), {})
-class BorderBoxDemo extends Component {
+class ButtonDemo extends Component {
 
     render () {
 
@@ -35,4 +35,4 @@ class BorderBoxDemo extends Component {
 
 }
 
-render(BorderBoxDemo);
+render(ButtonDemo);

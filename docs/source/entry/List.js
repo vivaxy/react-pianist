@@ -23,6 +23,7 @@ class ListDemo extends Component {
             'Toast',
             'List',
             'Button',
+            'Switchery',
         ];
 
         const itemStyle = {

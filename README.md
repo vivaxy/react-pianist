@@ -20,13 +20,11 @@ react-pianist provides react components to speed up web development
 # ROADMAP
 
 ## components
-- form layout
 - switchery
 - text input, password input, number input
 - date input
 - file input
 - loading
-- button
 - modal
 - etc.
 

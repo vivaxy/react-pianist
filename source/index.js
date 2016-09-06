@@ -3,10 +3,12 @@
  * @author vivaxy
  */
 
+export colors from './colors';
+
 export BorderBox from './BorderBox';
 export HorizontalFlex from './HorizontalFlex';
 export VerticalFlex from './VerticalFlex';
 export Toast from './Toast';
 export List from './List';
 export Button from './Button';
-export colors from './colors';
+export Switchery from './Switchery';

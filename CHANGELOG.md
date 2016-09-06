@@ -1,5 +1,6 @@
 # 0.0.7
 
+- [component] colors: add commonly used colors
 - [component] HorizontalFlex: fix width props
 - [component] HorizontalFlex: fix flex width
 - [component] VerticalFlex: fix flex height
@@ -7,10 +8,11 @@
 - [component] Button: optimize style
 - [component] Toast: optimize style
 - [component] Toast: support not auto hide, as controlled hidden
-- [component] colors: add commonly used colors
+- [component] Switchery: add
 - [docs] fix dev page URL
 - [docs] BorderBox: optimize style
 - [docs] Button: add
+- [docs] Switchery: add
 
 # 0.0.6
 

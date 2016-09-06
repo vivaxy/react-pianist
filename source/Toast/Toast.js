@@ -6,24 +6,30 @@
 import React, { Component, PropTypes } from 'react';
 import warning from 'warning';
 
+import sleep from '../library/sleep';
 import i18n from '../config/i18n';
 import colors from '../colors';
 
+/**
+ * should not support close callback:
+ *      if you want to know the toast is closed, you should use controlled toast, ie set `autoHide` as false.
+ */
 export default class Toast extends Component {
 
     state = {
-        open: false,
+        show: false,
     };
 
     static propTypes = {
         animationDuration: PropTypes.number,
-        open: PropTypes.bool.isRequired,
-        autoHide: PropTypes.bool,
+        show: PropTypes.bool,
         autoHideDuration: PropTypes.number,
         top: PropTypes.number,
+        autoHide: PropTypes.bool,
     };
 
     static defaultProps = {
+        show: false,
         autoHide: true,
         animationDuration: 300,
         autoHideDuration: 3000,
@@ -32,53 +38,74 @@ export default class Toast extends Component {
 
     componentWillMount () {
         this.setState({
-            open: this.props.open,
+            show: this.props.show,
         });
     }
 
     componentWillReceiveProps (nextProps) {
-        if (nextProps.open) {
-            if (this.state.open) {
+        if (nextProps.show) {
+            if (this.state.show) {
                 // close toast
-                if (this._timeout) {
-                    clearTimeout(this._timeout);
-                    this.setState({
-                        open: false,
-                    });
-                }
-                if (this._animationTimeout) {
-                    clearTimeout(this._animationTimeout);
-                }
+                this.closeToast({
+                    immediate: true,
+                });
             }
-            this.setState({
-                open: true,
-            });
-            setTimeout(() => {
-                this._root.style.opacity = '1';
-                if (this.props.autoHide) {
-                    this._timeout = setTimeout(() => {
-                        this._root.style.opacity = '0';
-                        this._animationTimeout = setTimeout(() => {
-                            this.setState({
-                                open: false,
-                            });
-                        }, this.props.animationDuration);
-                    }, this.props.autoHideDuration);
-                }
-            }, 0);
+            this.showToast();
         } else {
-            this.setState({
-                open: false,
-            });
+            this.closeToast();
+        }
+    }
+
+    async closeToast ({
+        immediate,
+    } = {
+        immediate: false,
+    }) {
+        if (this.state.show) {
+            if (this._timeout) {
+                clearTimeout(this._timeout);
+            }
+            if (this._animationTimeout) {
+                clearTimeout(this._animationTimeout);
+            }
+            if (!immediate) {
+                this._root.style.opacity = '0';
+                this._animationTimeout = await sleep(this.props.animationDuration);
+                this.setState({
+                    show: false,
+                });
+            }
+        }
+    }
+
+    async showToast () {
+        if (this._timeout) {
+            clearTimeout(this._timeout);
+        }
+        if (this._animationTimeout) {
+            clearTimeout(this._animationTimeout);
+        }
+        this.setState({
+            show: true,
+        });
+        await sleep(0);
+        this._root.style.opacity = '1';
+        if (this.props.autoHide) {
+            this._timeout = await sleep(this.props.autoHideDuration);
+            this.closeToast();
         }
     }
 
     render () {
 
+        const TRANSFORM = `translate3d(-50%, -50%, 0)`;
+
         const {
             children,
             top,
             style,
+            show: showProps,
+            autoHide,
             autoHideDuration,
             animationDuration,
             ...otherProps,
@@ -88,8 +115,8 @@ export default class Toast extends Component {
             display: 'none',
             position: 'fixed',
             left: '50%',
-            transform: 'translate3d(-50%, -50%, 0)',
-            WebkitTransform: 'translate3d(-50%, -50%, 0)',
+            transform: TRANSFORM,
+            WebkitTransform: TRANSFORM,
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             borderRadius: '4px',
             zIndex: '999',
@@ -102,7 +129,7 @@ export default class Toast extends Component {
         };
 
         const {
-            open,
+            show,
         } = this.state;
 
         const computedStyle = {
@@ -111,7 +138,7 @@ export default class Toast extends Component {
             ...style,
         };
 
-        if (open) {
+        if (show) {
             computedStyle.display = 'block';
         }
 
