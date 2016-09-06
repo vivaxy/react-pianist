@@ -12,7 +12,7 @@
     "docs": "npm run docs:clean && npm run docs:webpack",
     "docs:clean": "rm -rf ./docs/release && mkdir ./docs/release",
     "docs:webpack": "webpack --progress --display-chunks --display-reasons --display-error-details --display-modules --display-exclude > ./docs/release/build.log",
-    "precommit": "npm run docs"
+    "precommit": "npm run docs && git add ."
   },
   "repository": {
     "type": "git",
