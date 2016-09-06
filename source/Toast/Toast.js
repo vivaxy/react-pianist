@@ -86,7 +86,7 @@ export default class Toast extends Component {
             left: '50%',
             transform: 'translate3d(-50%, -50%, 0)',
             WebkitTransform: 'translate3d(-50%, -50%, 0)',
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
             borderRadius: '4px',
             zIndex: '999',
             opacity: '0',

@@ -4,8 +4,14 @@
  */
 
 export default {
+
     WHITE: '#ffffff',
+    ABOUT_WHITE: '#efefef',
     BORDER: '#cacaca',
+    PRIMARY: '#3498db',
+    BLACK: '#000000',
+    ABOUT_BLACK: '#333333',
+
     TURQUOISE: '#1abc9c',
     EMERALD: '#2ecc71',
     PETER_RIVER: '#3498db',

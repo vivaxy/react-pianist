@@ -3,13 +3,13 @@
  * @author vivaxy
  */
 
-import * as zh_cn from './zh-cn';
+import * as en_us from './en-us';
 
 // use webStorm variable auto detect
-const LANGUAGE = 'zh-cn';
+const LANGUAGE = 'en-us';
 
 const languages = {
-    'zh-cn': zh_cn,
+    'en-us': en_us,
 };
 
-export default zh_cn;
+export default en_us;

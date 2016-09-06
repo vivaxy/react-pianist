@@ -3,7 +3,13 @@
 - [component] HorizontalFlex: fix width props
 - [component] HorizontalFlex: fix flex width
 - [component] VerticalFlex: fix flex height
+- [component] Button: add ButtonGroup
+- [component] Button: optimize style
+- [component] Toast: optimize style
+- [component] colors: add commonly used colors
 - [docs] fix dev page URL
+- [docs] BorderBox: optimize style
+- [docs] Button: add
 
 # 0.0.6
 

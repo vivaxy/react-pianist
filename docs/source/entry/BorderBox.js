@@ -23,6 +23,9 @@ class BorderBoxDemo extends Component {
         return <BorderBox style={{
             width: '100px',
             height: '100px',
+            backgroundColor: colors.ABOUT_WHITE,
+            color: colors.ABOUT_BLACK,
+            margin: '10px auto',
         }}>
             <BorderLine color={colors.BORDER} position={'top'}/>
             <BorderLine color={colors.BORDER} position={'bottom'}/>

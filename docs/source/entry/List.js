@@ -5,6 +5,7 @@
 
 import React, { Component } from 'react';
 import { List, Item } from 'react-pianist/List';
+import colors from 'react-pianist/colors';
 
 import connect from '../library/connect';
 import render from '../library/render';
@@ -21,12 +22,14 @@ class ListDemo extends Component {
             'BorderBox',
             'Toast',
             'List',
+            'Button',
         ];
 
         const itemStyle = {
             height: '46px',
             lineHeight: '46px',
             paddingLeft: '15px',
+            color: colors.ABOUT_BLACK,
         };
 
         return <List>

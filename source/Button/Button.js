@@ -24,11 +24,16 @@ export default class Button extends Component {
 
     render () {
 
+        const PADDING = 16;
+        const BORDER = 1;
+        const HEIGHT = 36;
+
         const defaultStyle = {
             display: 'inline-block',
             borderRadius: '4px',
-            padding: '0 30px',
-            fontSize: '16px',
+            padding: `0 ${PADDING}px`,
+            fontSize: '14px',
+            verticalAlign: 'top',
         };
 
         const {
@@ -40,25 +45,27 @@ export default class Button extends Component {
             ...otherProps,
         } = this.props;
 
-        if (width !== undefined) {
-            defaultStyle.width = width;
-        }
-
         if (disabled) {
             defaultStyle.opacity = '0.4';
         }
 
         if (primary) {
-            defaultStyle.backgroundColor = colors.TURQUOISE;
+            defaultStyle.backgroundColor = colors.PRIMARY;
             defaultStyle.color = colors.WHITE;
-            defaultStyle.height = '40px';
-            defaultStyle.lineHeight = '40px';
+            defaultStyle.height = `${HEIGHT}px`;
+            defaultStyle.lineHeight = `${HEIGHT}px`;
+            if (width !== undefined) {
+                defaultStyle.width = `${width - PADDING * 2}px`;
+            }
         } else {
-            defaultStyle.backgroundColor = colors.WHITE;
-            defaultStyle.color = colors.TURQUOISE;
-            defaultStyle.height = '38px';
-            defaultStyle.lineHeight = '38x';
-            defaultStyle.border = `1px solid ${colors.BORDER}`;
+            defaultStyle.backgroundColor = colors.ABOUT_WHITE;
+            defaultStyle.color = colors.ABOUT_BLACK;
+            defaultStyle.height = `${HEIGHT - BORDER * 2}px`;
+            defaultStyle.lineHeight = `${HEIGHT - BORDER * 2}px`;
+            defaultStyle.border = `${BORDER}px solid ${colors.BORDER}`;
+            if (width !== undefined) {
+                defaultStyle.width = `${width - PADDING * 2 - BORDER * 2}px`;
+            }
         }
 
         const computedStyle = {
