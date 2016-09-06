@@ -18,11 +18,13 @@ export default class Toast extends Component {
     static propTypes = {
         animationDuration: PropTypes.number,
         open: PropTypes.bool.isRequired,
+        autoHide: PropTypes.bool,
         autoHideDuration: PropTypes.number,
         top: PropTypes.number,
     };
 
     static defaultProps = {
+        autoHide: true,
         animationDuration: 300,
         autoHideDuration: 3000,
         top: 50,
@@ -53,14 +55,16 @@ export default class Toast extends Component {
             });
             setTimeout(() => {
                 this._root.style.opacity = '1';
-                this._timeout = setTimeout(() => {
-                    this._root.style.opacity = '0';
-                    this._animationTimeout = setTimeout(() => {
-                        this.setState({
-                            open: false,
-                        });
-                    }, this.props.animationDuration);
-                }, this.props.autoHideDuration);
+                if (this.props.autoHide) {
+                    this._timeout = setTimeout(() => {
+                        this._root.style.opacity = '0';
+                        this._animationTimeout = setTimeout(() => {
+                            this.setState({
+                                open: false,
+                            });
+                        }, this.props.animationDuration);
+                    }, this.props.autoHideDuration);
+                }
             }, 0);
         } else {
             this.setState({

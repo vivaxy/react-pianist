@@ -6,6 +6,7 @@
 - [component] Button: add ButtonGroup
 - [component] Button: optimize style
 - [component] Toast: optimize style
+- [component] Toast: support not auto hide, as controlled hidden
 - [component] colors: add commonly used colors
 - [docs] fix dev page URL
 - [docs] BorderBox: optimize style

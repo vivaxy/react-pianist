@@ -34,13 +34,13 @@ class ToastDemo extends Component {
                 textAlign: 'center',
                 marginTop: '20px',
             }}>
-                <Button onClick={::this.toast}>toast</Button>
+                <Button onClick={::this.toast}>TOAST</Button>
             </div>
             <div style={{
                 textAlign: 'center',
                 marginTop: '20px',
             }}>
-                <Button onClick={::this.toastAnother}>toast another</Button>
+                <Button onClick={::this.toastAnother}>TOAST ANOTHER</Button>
             </div>
             <Toast open={toastState.show}>{toastState.message}</Toast>
         </div>
