@@ -3,7 +3,7 @@
  * @author vivaxy
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, Children, cloneElement } from 'react';
 import warning from 'warning';
 
 import i18n from '../config/i18n';
@@ -15,9 +15,12 @@ export default class ButtonGroup extends Component {
 
     static propTypes = {
         children: checkChildren(Button),
+        space: PropTypes.number,
     };
 
-    static defaultProps = {};
+    static defaultProps = {
+        space: 20,
+    };
 
     render () {
 
@@ -28,6 +31,7 @@ export default class ButtonGroup extends Component {
         const {
             children,
             style,
+            space,
             ...otherProps,
         } = this.props;
 
@@ -36,6 +40,15 @@ export default class ButtonGroup extends Component {
             ...style,
         };
 
-        return <div style={computedStyle} {...otherProps}>{children}</div>
+        const childWithSpace = Children.map(children, (child) => {
+                return cloneElement(child, {
+                    style: {
+                        margin: `0 ${space}px`
+                    }
+                });
+            }
+        );
+
+        return <div style={computedStyle} {...otherProps}>{childWithSpace}</div>
     }
 }

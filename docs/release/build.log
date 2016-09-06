@@ -1,26 +1,26 @@
-Hash: 4530b87452b4a455bc67
+Hash: 72c2d7c0b0bf5dfaf6d5
 Version: webpack 1.13.2
-Time: 15541ms
+Time: 25412ms
                                                      Asset       Size  Chunks             Chunk Names
                                             js/List.js.map    57.7 kB       3  [emitted]  List
 image/vivaxy.20150726-e85e6ede6d8c1d4a1197425b3095d6c9.jpg    23.8 kB          [emitted]  
-                                              js/Button.js    8.81 kB       1  [emitted]  Button
+                                              js/Button.js    8.94 kB       1  [emitted]  Button
                                       js/HorizontalFlex.js    7.91 kB       2  [emitted]  HorizontalFlex
                                                 js/List.js    14.4 kB       3  [emitted]  List
                                            js/Switchery.js    11.3 kB       4  [emitted]  Switchery
-                                               js/Toast.js    9.34 kB       5  [emitted]  Toast
+                                               js/Toast.js    9.52 kB       5  [emitted]  Toast
                                         js/VerticalFlex.js    7.91 kB       6  [emitted]  VerticalFlex
                                               js/common.js     275 kB       7  [emitted]  common
-                                               js/index.js    8.79 kB       8  [emitted]  index
+                                               js/index.js    8.97 kB       8  [emitted]  index
                                        js/BorderBox.js.map    31.4 kB       0  [emitted]  BorderBox
-                                          js/Button.js.map    36.8 kB       1  [emitted]  Button
+                                          js/Button.js.map    37.9 kB       1  [emitted]  Button
                                   js/HorizontalFlex.js.map    33.6 kB       2  [emitted]  HorizontalFlex
                                            js/BorderBox.js     7.8 kB       0  [emitted]  BorderBox
                                        js/Switchery.js.map    58.8 kB       4  [emitted]  Switchery
-                                           js/Toast.js.map    41.5 kB       5  [emitted]  Toast
+                                           js/Toast.js.map    42.7 kB       5  [emitted]  Toast
                                     js/VerticalFlex.js.map      33 kB       6  [emitted]  VerticalFlex
                                           js/common.js.map    2.62 MB       7  [emitted]  common
-                                           js/index.js.map    37.7 kB       8  [emitted]  index
+                                           js/index.js.map    38.9 kB       8  [emitted]  index
                                        html/BorderBox.html  473 bytes          [emitted]  
                                           html/Button.html  470 bytes          [emitted]  
                                   html/HorizontalFlex.html  478 bytes          [emitted]  
@@ -49,7 +49,7 @@ chunk    {0} js/BorderBox.js, js/BorderBox.js.map (BorderBox) 15.6 kB {7} [rende
         cjs require ./BorderBox [206] ./source/BorderBox/index.js 8:18-40
   [208] ./source/BorderBox/BorderLine.js 6.51 kB {0} {3} [built]
         cjs require ./BorderLine [206] ./source/BorderBox/index.js 12:19-42
-chunk    {1} js/Button.js, js/Button.js.map (Button) 18.1 kB {7} [rendered]
+chunk    {1} js/Button.js, js/Button.js.map (Button) 18.5 kB {7} [rendered]
     [0] multi Button 28 bytes {1} [built]
   [205] ./docs/source/library/setTitle.js 460 bytes {0} {1} {2} {4} {5} {6} {8} [built]
         cjs require ../library/setTitle [1] ./docs/source/entry/BorderBox.js 22:16-46
@@ -59,16 +59,16 @@ chunk    {1} js/Button.js, js/Button.js.map (Button) 18.1 kB {7} [rendered]
         cjs require ../library/setTitle [234] ./docs/source/entry/Toast.js 22:16-46
         cjs require ../library/setTitle [236] ./docs/source/entry/VerticalFlex.js 22:16-46
         cjs require ../library/setTitle [537] ./docs/source/entry/index.js 22:16-46
-  [209] ./docs/source/entry/Button.js 4.51 kB {1} [built]
+  [209] ./docs/source/entry/Button.js 4.45 kB {1} [built]
         single entry /Users/vivaxy/code/github/react-pianist/docs/source/entry/Button.js [0] multi Button
   [210] ./source/Button/index.js 756 bytes {1} {5} {8} [built]
         cjs require react-pianist/Button [209] ./docs/source/entry/Button.js 26:14-45
         cjs require react-pianist/Button [234] ./docs/source/entry/Toast.js 42:14-45
         cjs require react-pianist/Button [537] ./docs/source/entry/index.js 42:14-45
-  [211] ./source/Button/Button.js 5.48 kB {1} {5} {8} [built]
+  [211] ./source/Button/Button.js 5.57 kB {1} {5} {8} [built]
         cjs require ./Button [210] ./source/Button/index.js 8:15-34
         cjs require ./Button [212] ./source/Button/ButtonGroup.js 37:14-33
-  [212] ./source/Button/ButtonGroup.js 4.22 kB {1} {5} {8} [built]
+  [212] ./source/Button/ButtonGroup.js 4.61 kB {1} {5} {8} [built]
         cjs require ./ButtonGroup [210] ./source/Button/index.js 12:20-44
   [213] ./source/library/checkChildren.js 895 bytes {1} {2} {3} {5} {6} {8} [built]
         cjs require ../library/checkChildren [212] ./source/Button/ButtonGroup.js 29:21-56
@@ -164,7 +164,7 @@ chunk    {4} js/Switchery.js, js/Switchery.js.map (Switchery) 24.2 kB {7} [rende
         cjs require ./../../node_modules/css-loader/lib/css-base.js [231] ./~/css-loader?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./~/less-loader!./source/Switchery/Switchery.less 1:27-85
   [233] ./~/style-loader/addStyles.js 7.15 kB {4} [built]
         cjs require !./../../node_modules/style-loader/addStyles.js [230] ./source/Switchery/Switchery.less 7:13-71
-chunk    {5} js/Toast.js, js/Toast.js.map (Toast) 20.1 kB {7} [rendered]
+chunk    {5} js/Toast.js, js/Toast.js.map (Toast) 20.6 kB {7} [rendered]
     [0] multi Toast 28 bytes {5} [built]
   [205] ./docs/source/library/setTitle.js 460 bytes {0} {1} {2} {4} {5} {6} {8} [built]
         cjs require ../library/setTitle [1] ./docs/source/entry/BorderBox.js 22:16-46
@@ -178,10 +178,10 @@ chunk    {5} js/Toast.js, js/Toast.js.map (Toast) 20.1 kB {7} [rendered]
         cjs require react-pianist/Button [209] ./docs/source/entry/Button.js 26:14-45
         cjs require react-pianist/Button [234] ./docs/source/entry/Toast.js 42:14-45
         cjs require react-pianist/Button [537] ./docs/source/entry/index.js 42:14-45
-  [211] ./source/Button/Button.js 5.48 kB {1} {5} {8} [built]
+  [211] ./source/Button/Button.js 5.57 kB {1} {5} {8} [built]
         cjs require ./Button [210] ./source/Button/index.js 8:15-34
         cjs require ./Button [212] ./source/Button/ButtonGroup.js 37:14-33
-  [212] ./source/Button/ButtonGroup.js 4.22 kB {1} {5} {8} [built]
+  [212] ./source/Button/ButtonGroup.js 4.61 kB {1} {5} {8} [built]
         cjs require ./ButtonGroup [210] ./source/Button/index.js 12:20-44
   [213] ./source/library/checkChildren.js 895 bytes {1} {2} {3} {5} {6} {8} [built]
         cjs require ../library/checkChildren [212] ./source/Button/ButtonGroup.js 29:21-56
@@ -2412,7 +2412,7 @@ chunk    {7} js/common.js, js/common.js.map (common) 1 MB [rendered]
         cjs require ./_replacer [534] ./~/babel-polyfill/~/core-js/modules/core.regexp.escape.js 3:14-36
   [536] ./~/whatwg-fetch/fetch.js 11.6 kB {7} [built]
         single entry whatwg-fetch [0] multi common
-chunk    {8} js/index.js, js/index.js.map (index) 18.5 kB {7} [rendered]
+chunk    {8} js/index.js, js/index.js.map (index) 19 kB {7} [rendered]
     [0] multi index 28 bytes {8} [built]
   [205] ./docs/source/library/setTitle.js 460 bytes {0} {1} {2} {4} {5} {6} {8} [built]
         cjs require ../library/setTitle [1] ./docs/source/entry/BorderBox.js 22:16-46
@@ -2426,10 +2426,10 @@ chunk    {8} js/index.js, js/index.js.map (index) 18.5 kB {7} [rendered]
         cjs require react-pianist/Button [209] ./docs/source/entry/Button.js 26:14-45
         cjs require react-pianist/Button [234] ./docs/source/entry/Toast.js 42:14-45
         cjs require react-pianist/Button [537] ./docs/source/entry/index.js 42:14-45
-  [211] ./source/Button/Button.js 5.48 kB {1} {5} {8} [built]
+  [211] ./source/Button/Button.js 5.57 kB {1} {5} {8} [built]
         cjs require ./Button [210] ./source/Button/index.js 8:15-34
         cjs require ./Button [212] ./source/Button/ButtonGroup.js 37:14-33
-  [212] ./source/Button/ButtonGroup.js 4.22 kB {1} {5} {8} [built]
+  [212] ./source/Button/ButtonGroup.js 4.61 kB {1} {5} {8} [built]
         cjs require ./ButtonGroup [210] ./source/Button/index.js 12:20-44
   [213] ./source/library/checkChildren.js 895 bytes {1} {2} {3} {5} {6} {8} [built]
         cjs require ../library/checkChildren [212] ./source/Button/ButtonGroup.js 29:21-56

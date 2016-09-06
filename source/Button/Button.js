@@ -34,6 +34,7 @@ export default class Button extends Component {
             padding: `0 ${PADDING}px`,
             fontSize: '14px',
             verticalAlign: 'top',
+            cursor: 'pointer',
         };
 
         const {
@@ -47,6 +48,7 @@ export default class Button extends Component {
 
         if (disabled) {
             defaultStyle.opacity = '0.4';
+            defaultStyle.cursor = 'not-allowed';
         }
 
         if (primary) {
