@@ -3,20 +3,21 @@
  * @author vivaxy
  */
 
-
 import React, { Component, PropTypes } from 'react';
 import warning from 'warning';
 
 import i18n from '../config/i18n';
+import checkChildren from '../library/checkChildren';
 import colors from '../colors';
+import Button from './Button';
 
 export default class ButtonGroup extends Component {
 
     static propTypes = {
+        children: checkChildren(Button),
     };
 
-    static defaultProps = {
-    };
+    static defaultProps = {};
 
     render () {
 

@@ -17,7 +17,7 @@ export default class Item extends Component {
     render () {
 
         const defaultStyle = {
-            marginLeft: '15px',
+            paddingLeft: '15px',
         };
 
         const {
@@ -27,12 +27,16 @@ export default class Item extends Component {
             ...otherProps
         } = this.props;
 
-        return <BorderBox {...otherProps} style={{
+        const computedStyle = {
             ...defaultStyle,
             ...style,
-        }}>
-            {_isLast ? null : <BorderLine position={'bottom'} color={colors.BORDER}/>}
-            {children}
-        </BorderBox>
+        };
+
+        return <div style={computedStyle} {...otherProps}>
+            <BorderBox>
+                {_isLast ? null : <BorderLine position={'bottom'} color={colors.BORDER}/>}
+                {children}
+            </BorderBox>
+        </div>
     }
 }

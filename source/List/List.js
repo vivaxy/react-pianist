@@ -6,11 +6,15 @@
 import React, { Component, PropTypes, cloneElement } from 'react';
 
 import { BorderBox, BorderLine } from '../BorderBox';
+import Item from './Item';
+import checkChildren from '../library/checkChildren';
 import colors from '../colors';
 
 export default class List extends Component {
 
-    static propTypes = {};
+    static propTypes = {
+        children: checkChildren(Item),
+    };
 
     static defaultProps = {};
 

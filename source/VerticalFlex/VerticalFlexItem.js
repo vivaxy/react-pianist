@@ -8,7 +8,7 @@ import warning from 'warning';
 
 import * as i18n from '../config/i18n';
 
-export default class VerticalListItem extends Component {
+export default class VerticalFlexItem extends Component {
 
     static propTypes = {
         flex: PropTypes.number,

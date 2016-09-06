@@ -5,9 +5,14 @@
 
 import React, { Component, PropTypes } from 'react';
 
-export default class HorizontalList extends Component {
+import HorizontalFlexItem from './HorizontalFlexItem';
+import checkChildren from '../library/checkChildren';
 
-    static propTypes = {};
+export default class HorizontalFlexBox extends Component {
+
+    static propTypes = {
+        children: checkChildren(HorizontalFlexItem),
+    };
 
     static defaultProps = {};
 

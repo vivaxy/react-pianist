@@ -5,9 +5,14 @@
 
 import React, { Component, PropTypes } from 'react';
 
-export default class VerticalList extends Component {
+import checkChildren from '../library/checkChildren';
+import VerticalFlexItem from './VerticalFlexItem';
 
-    static propTypes = {};
+export default class VerticalFlexBox extends Component {
+
+    static propTypes = {
+        children: checkChildren(VerticalFlexItem),
+    };
 
     static defaultProps = {};
 

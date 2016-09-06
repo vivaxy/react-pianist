@@ -29,7 +29,7 @@ class ListDemo extends Component {
         const itemStyle = {
             height: '46px',
             lineHeight: '46px',
-            paddingLeft: '15px',
+            textIndent: '15px',
             color: colors.ABOUT_BLACK,
         };
 

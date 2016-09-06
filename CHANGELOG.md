@@ -1,6 +1,7 @@
 # 0.0.7
 
 - [core] fix sleep
+- [core] add check children for components, including: HorizontalFlex, ButtonGroup, List, VerticalFlex
 - [component] colors: add commonly used colors
 - [component] HorizontalFlex: fix width props
 - [component] HorizontalFlex: fix flex width
