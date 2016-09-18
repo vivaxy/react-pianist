@@ -3,7 +3,6 @@
  * @author vivaxy
  */
 
-
 import React, { Component } from 'react';
 
 import connect from '../library/connect';
