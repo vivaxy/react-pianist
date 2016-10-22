@@ -4,9 +4,10 @@
   "description": "react components to speed up web development",
   "main": "./source/index.js",
   "scripts": {
-    "build": "npm run build:babel && npm run build:copy",
+    "build": "npm run build:clean && npm run build:babel && npm run build:copy",
+    "build:clean": "rm -rf ./build",
     "build:babel": "NODE_ENV=production babel ./source --out-dir ./build",
-    "build:copy": "babel-node ./scripts/copy.js",
+    "build:copy": "babel-node ./scripts/copy.js && cp -r ./source/assets ./build",
     "pub": "sh ./scripts/publish.sh",
     "dev": "NODE_ENV=development webpack-dev-server --progress",
     "docs": "npm run docs:clean && npm run docs:webpack",

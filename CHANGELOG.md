@@ -1,3 +1,9 @@
+# 0.0.8
+
+- [core] fix css, less file not published
+- [core] fix check children: passing `null` as children will be ignored ever since
+- [docs] fix docs hot reload
+
 # 0.0.7
 
 - [core] fix sleep

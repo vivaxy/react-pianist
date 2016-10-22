@@ -10,7 +10,7 @@ import setTitle from '../library/setTitle';
 import action from '../action';
 
 import Switchery from 'react-pianist/Switchery';
-import Toast, { AutoHideToast } from 'react-pianist/Toast';
+import { AutoHideToast } from 'react-pianist/Toast';
 
 class SwitcheryDemo extends Component {
 
@@ -44,7 +44,7 @@ class SwitcheryDemo extends Component {
                 onChange={::this.onChange(`secondSwitcheryChecked`)}/>
             <Switchery checked={true} disabled={true}/>
             <Switchery checked={false} disabled={true}/>
-            <Toast show={toastShow}>{toastMessage}</Toast>
+            <AutoHideToast show={toastShow}>{toastMessage}</AutoHideToast>
         </div>
     }
 

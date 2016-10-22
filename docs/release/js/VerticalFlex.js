@@ -1,3 +1,531 @@
 /*! @2016 vivaxy */
-webpackJsonp([6],{0:function(e,t,r){e.exports=r(236)},205:function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(e){document.title=e};t["default"]=r,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(r,"default","/Users/vivaxy/code/github/react-pianist/docs/source/library/setTitle.js")}()},213:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=r(2),o=function(e){return function(t,r,o){var i=t[r],l=null;return n.Children.forEach(i,function(t){t.type!==e&&(l=new Error("Component '"+o+"' should only have children of '"+e.name+"' type"))}),l}};t["default"]=o,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(o,"default","/Users/vivaxy/code/github/react-pianist/source/library/checkChildren.js")}()},236:function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function l(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var u,a,c=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),f=r(2),s=n(f),p=r(31),_=n(p),d=r(58),y=n(d),h=r(205),b=n(h),O=r(237),v=r(198),x=n(v),E=(u=(0,_["default"])(function(e){return{}},{}),u(a=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return l(t,e),c(t,[{key:"render",value:function(){return(0,b["default"])("VerticalFlexBox"),s["default"].createElement(O.VerticalFlexBox,{style:{width:"100%",height:"100%",position:"absolute"}},s["default"].createElement(O.VerticalFlexItem,{flex:1,style:{backgroundColor:x["default"].TURQUOISE,color:x["default"].WHITE,textAlign:"center",lineHeight:"50px"}},"this block auto expand"),s["default"].createElement(O.VerticalFlexItem,{height:50,style:{backgroundColor:x["default"].EMERALD,color:x["default"].WHITE,textAlign:"center",lineHeight:"50px"}},"this block will not expand"))}}]),t}(f.Component))||a);(0,y["default"])(E),function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(E,"VerticalFlex","/Users/vivaxy/code/github/react-pianist/docs/source/entry/VerticalFlex.js")}()},237:function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0}),t.VerticalFlexItem=t.VerticalFlexBox=void 0;var o=r(238),i=n(o),l=r(239),u=n(l);t.VerticalFlexBox=i["default"],t.VerticalFlexItem=u["default"],function(){"undefined"==typeof __REACT_HOT_LOADER__}()},238:function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){var r={};for(var n in e)t.indexOf(n)>=0||Object.prototype.hasOwnProperty.call(e,n)&&(r[n]=e[n]);return r}function i(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function l(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var c,f,s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},p=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_=r(2),d=n(_),y=r(213),h=n(y),b=r(239),O=n(b),v=(f=c=function(e){function t(){return l(this,t),u(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),p(t,[{key:"render",value:function(){var e,t=(e={display:"-webkit-box"},i(e,"display","-webkit-flex"),i(e,"display","flex"),i(e,"WebkitBoxOrient","vertical"),i(e,"WebkitBoxDirection","normal"),i(e,"WebkitFlexDirection","column"),i(e,"flexDirection","column"),e),r=this.props,n=r.children,l=r.style,u=o(r,["children","style"]);return d["default"].createElement("div",s({},u,{style:s({},t,l)}),n)}}]),t}(_.Component),c.propTypes={children:(0,h["default"])(O["default"])},c.defaultProps={},f);t["default"]=v,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(v,"VerticalFlexBox","/Users/vivaxy/code/github/react-pianist/source/VerticalFlex/VerticalFlexBox.js")}()},239:function(e,t,r){"use strict";function n(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t["default"]=e,t}function o(e){return e&&e.__esModule?e:{"default":e}}function i(e,t){var r={};for(var n in e)t.indexOf(n)>=0||Object.prototype.hasOwnProperty.call(e,n)&&(r[n]=e[n]);return r}function l(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var c,f,s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},p=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_=r(2),d=o(_),y=r(200),h=o(y),b=r(201),O=n(b),v=(f=c=function(e){function t(){return l(this,t),u(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),p(t,[{key:"componentDidMount",value:function(){(0,h["default"])(void 0===this.props.flex||void 0===this.props.height,O.ONE_OR_THE_OTHER("flex","height")),(0,h["default"])(void 0!==this.props.flex||void 0!==this.props.height,O.MUST_DEFINE_ONE("flex","height"))}},{key:"render",value:function(){var e=this.props,t=e.flex,r=e.height,n=e.children,o=e.style,l=i(e,["flex","height","children","style"]),u={};return u=void 0!==t?s({WebkitBoxFlex:t,WebkitFlex:t,flex:t,height:0},o):s({height:r},o),d["default"].createElement("div",s({style:u},l),n)}}]),t}(_.Component),c.propTypes={flex:_.PropTypes.number,height:_.PropTypes.number},c.defaultProps={},f);t["default"]=v,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(v,"VerticalFlexItem","/Users/vivaxy/code/github/react-pianist/source/VerticalFlex/VerticalFlexItem.js")}()}});
+webpackJsonp([6],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(247);
+
+
+/***/ },
+
+/***/ 211:
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _default = function _default(title) {
+	  document.title = title;
+	};
+	
+	/**
+	 * @since 2016-08-13 14:38
+	 * @author vivaxy
+	 */
+
+	exports.default = _default;
+	;
+
+	(function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(_default, "default", "/Users/vivaxy/code/github/react-pianist/docs/source/library/setTitle.js");
+	})();
+
+	;
+
+/***/ },
+
+/***/ 220:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(3);
+	
+	var _childrenFilter = __webpack_require__(221);
+	
+	var _childrenFilter2 = _interopRequireDefault(_childrenFilter);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * @since 2016-09-02 14:43
+	 * @author vivaxy
+	 */
+	
+	var _default = function _default(ChildClass) {
+	    return function (props, propName, parentName) {
+	        var prop = props[propName];
+	        var error = null;
+	        _react.Children.forEach((0, _childrenFilter2.default)(prop), function (child) {
+	            if (child.type.name !== ChildClass.name) {
+	                error = new Error('Component \'' + parentName + '\' should only have children of \'' + ChildClass.name + '\' type');
+	            }
+	        });
+	        return error;
+	    };
+	};
+	
+	exports.default = _default;
+	;
+
+	(function () {
+	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	        return;
+	    }
+
+	    __REACT_HOT_LOADER__.register(_default, 'default', '/Users/vivaxy/code/github/react-pianist/source/library/checkChildren.js');
+	})();
+
+	;
+
+/***/ },
+
+/***/ 221:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(3);
+	
+	var _default = function _default(children) {
+	    return _react.Children.map(children, function (child) {
+	        return child;
+	    });
+	}; /**
+	    * @since 2016-10-21 19:17
+	    * @author vivaxy
+	    */
+
+	exports.default = _default;
+	;
+
+	(function () {
+	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	        return;
+	    }
+
+	    __REACT_HOT_LOADER__.register(_default, 'default', '/Users/vivaxy/code/github/react-pianist/source/library/childrenFilter.js');
+	})();
+
+	;
+
+/***/ },
+
+/***/ 247:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _render = __webpack_require__(2);
+	
+	var _render2 = _interopRequireDefault(_render);
+	
+	var _VerticalFlex = __webpack_require__(248);
+	
+	var _VerticalFlex2 = _interopRequireDefault(_VerticalFlex);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * @since 2016-09-04 10:20
+	 * @author vivaxy
+	 */
+	
+	(0, _render2.default)(_VerticalFlex2.default);
+	
+	if (false) {
+	    module.hot.accept('../container/VerticalFlex', function () {
+	        var NewEntry = require('../container/VerticalFlex').default;
+	        (0, _render.renderWithEntry)(NewEntry);
+	    });
+	}
+	;
+
+	(function () {
+	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	        return;
+	    }
+	})();
+
+	;
+
+/***/ },
+
+/***/ 248:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(3);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _connect = __webpack_require__(202);
+	
+	var _connect2 = _interopRequireDefault(_connect);
+	
+	var _setTitle = __webpack_require__(211);
+	
+	var _setTitle2 = _interopRequireDefault(_setTitle);
+	
+	var _VerticalFlex = __webpack_require__(249);
+	
+	var _colors = __webpack_require__(198);
+	
+	var _colors2 = _interopRequireDefault(_colors);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @since 2016-09-04 10:20
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author vivaxy
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	var VerticalFlex = function (_Component) {
+	    _inherits(VerticalFlex, _Component);
+	
+	    function VerticalFlex() {
+	        _classCallCheck(this, VerticalFlex);
+	
+	        return _possibleConstructorReturn(this, (VerticalFlex.__proto__ || Object.getPrototypeOf(VerticalFlex)).apply(this, arguments));
+	    }
+	
+	    _createClass(VerticalFlex, [{
+	        key: 'render',
+	        value: function render() {
+	
+	            (0, _setTitle2.default)('VerticalFlexBox');
+	
+	            return _react2.default.createElement(
+	                _VerticalFlex.VerticalFlexBox,
+	                { style: {
+	                        width: '100%',
+	                        height: '100%',
+	                        position: 'absolute'
+	                    } },
+	                _react2.default.createElement(
+	                    _VerticalFlex.VerticalFlexItem,
+	                    {
+	                        flex: 1,
+	                        style: {
+	                            backgroundColor: _colors2.default.TURQUOISE,
+	                            color: _colors2.default.WHITE,
+	                            textAlign: 'center',
+	                            lineHeight: '50px'
+	                        }
+	                    },
+	                    'this block auto expand'
+	                ),
+	                _react2.default.createElement(
+	                    _VerticalFlex.VerticalFlexItem,
+	                    {
+	                        height: 50,
+	                        style: {
+	                            backgroundColor: _colors2.default.EMERALD,
+	                            color: _colors2.default.WHITE,
+	                            textAlign: 'center',
+	                            lineHeight: '50px'
+	                        }
+	                    },
+	                    'this block will not expand'
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return VerticalFlex;
+	}(_react.Component);
+	
+	var _default = (0, _connect2.default)(function (state) {
+	    return {};
+	}, {})(VerticalFlex);
+	
+	exports.default = _default;
+	;
+	
+	(function () {
+	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	        return;
+	    }
+	
+	    __REACT_HOT_LOADER__.register(VerticalFlex, 'VerticalFlex', '/Users/vivaxy/code/github/react-pianist/docs/source/container/VerticalFlex.js');
+	
+	    __REACT_HOT_LOADER__.register(_default, 'default', '/Users/vivaxy/code/github/react-pianist/docs/source/container/VerticalFlex.js');
+	})();
+
+	;
+
+/***/ },
+
+/***/ 249:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.VerticalFlexItem = exports.VerticalFlexBox = undefined;
+	
+	var _VerticalFlexBox2 = __webpack_require__(250);
+	
+	var _VerticalFlexBox3 = _interopRequireDefault(_VerticalFlexBox2);
+	
+	var _VerticalFlexItem2 = __webpack_require__(251);
+	
+	var _VerticalFlexItem3 = _interopRequireDefault(_VerticalFlexItem2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.VerticalFlexBox = _VerticalFlexBox3.default; /**
+	                                                      * @since 2016-09-03 09:02
+	                                                      * @author vivaxy
+	                                                      */
+	
+	exports.VerticalFlexItem = _VerticalFlexItem3.default;
+	;
+
+	(function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+	})();
+
+	;
+
+/***/ },
+
+/***/ 250:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = undefined;
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _class, _temp; /**
+	                    * @since 2016-09-02 13:30
+	                    * @author vivaxy
+	                    */
+	
+	var _react = __webpack_require__(3);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _checkChildren = __webpack_require__(220);
+	
+	var _checkChildren2 = _interopRequireDefault(_checkChildren);
+	
+	var _VerticalFlexItem = __webpack_require__(251);
+	
+	var _VerticalFlexItem2 = _interopRequireDefault(_VerticalFlexItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var VerticalFlexBox = (_temp = _class = function (_Component) {
+	    _inherits(VerticalFlexBox, _Component);
+	
+	    function VerticalFlexBox() {
+	        _classCallCheck(this, VerticalFlexBox);
+	
+	        return _possibleConstructorReturn(this, (VerticalFlexBox.__proto__ || Object.getPrototypeOf(VerticalFlexBox)).apply(this, arguments));
+	    }
+	
+	    _createClass(VerticalFlexBox, [{
+	        key: 'render',
+	        value: function render() {
+	            var _boxStyle;
+	
+	            var boxStyle = (_boxStyle = {
+	                display: '-webkit-box'
+	            }, _defineProperty(_boxStyle, 'display', '-webkit-flex'), _defineProperty(_boxStyle, 'display', 'flex'), _defineProperty(_boxStyle, 'WebkitBoxOrient', 'vertical'), _defineProperty(_boxStyle, 'WebkitBoxDirection', 'normal'), _defineProperty(_boxStyle, 'WebkitFlexDirection', 'column'), _defineProperty(_boxStyle, 'flexDirection', 'column'), _boxStyle);
+	
+	            var _props = this.props;
+	            var children = _props.children;
+	            var style = _props.style;
+	
+	            var otherProps = _objectWithoutProperties(_props, ['children', 'style']);
+	
+	            return _react2.default.createElement(
+	                'div',
+	                _extends({}, otherProps, { style: _extends({}, boxStyle, style) }),
+	                children
+	            );
+	        }
+	    }]);
+	
+	    return VerticalFlexBox;
+	}(_react.Component), _class.propTypes = {
+	    children: (0, _checkChildren2.default)(_VerticalFlexItem2.default)
+	}, _class.defaultProps = {}, _temp);
+	exports.default = VerticalFlexBox;
+	;
+	
+	(function () {
+	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	        return;
+	    }
+	
+	    __REACT_HOT_LOADER__.register(VerticalFlexBox, 'VerticalFlexBox', '/Users/vivaxy/code/github/react-pianist/source/VerticalFlex/VerticalFlexBox.js');
+	})();
+
+	;
+
+/***/ },
+
+/***/ 251:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = undefined;
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _class, _temp; /**
+	                    * @since 2016-09-02 16:02
+	                    * @author vivaxy
+	                    */
+	
+	var _react = __webpack_require__(3);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _warning = __webpack_require__(200);
+	
+	var _warning2 = _interopRequireDefault(_warning);
+	
+	var _i18n = __webpack_require__(201);
+	
+	var i18n = _interopRequireWildcard(_i18n);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var VerticalFlexItem = (_temp = _class = function (_Component) {
+	    _inherits(VerticalFlexItem, _Component);
+	
+	    function VerticalFlexItem() {
+	        _classCallCheck(this, VerticalFlexItem);
+	
+	        return _possibleConstructorReturn(this, (VerticalFlexItem.__proto__ || Object.getPrototypeOf(VerticalFlexItem)).apply(this, arguments));
+	    }
+	
+	    _createClass(VerticalFlexItem, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            (0, _warning2.default)(this.props.flex === undefined || this.props.height === undefined, i18n.ONE_OR_THE_OTHER('flex', 'height'));
+	            (0, _warning2.default)(this.props.flex !== undefined || this.props.height !== undefined, i18n.MUST_DEFINE_ONE('flex', 'height'));
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var flex = _props.flex;
+	            var height = _props.height;
+	            var children = _props.children;
+	            var style = _props.style;
+	
+	            var otherProps = _objectWithoutProperties(_props, ['flex', 'height', 'children', 'style']);
+	
+	            var childStyle = {};
+	
+	            if (flex !== undefined) {
+	                childStyle = _extends({
+	                    WebkitBoxFlex: flex,
+	                    WebkitFlex: flex,
+	                    flex: flex,
+	                    height: 0
+	                }, style);
+	            } else {
+	                childStyle = _extends({
+	                    height: height
+	                }, style);
+	            }
+	
+	            return _react2.default.createElement(
+	                'div',
+	                _extends({ style: childStyle }, otherProps),
+	                children
+	            );
+	        }
+	    }]);
+	
+	    return VerticalFlexItem;
+	}(_react.Component), _class.propTypes = {
+	    flex: _react.PropTypes.number,
+	    height: _react.PropTypes.number
+	}, _class.defaultProps = {}, _temp);
+	exports.default = VerticalFlexItem;
+	;
+	
+	(function () {
+	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	        return;
+	    }
+	
+	    __REACT_HOT_LOADER__.register(VerticalFlexItem, 'VerticalFlexItem', '/Users/vivaxy/code/github/react-pianist/source/VerticalFlex/VerticalFlexItem.js');
+	})();
+
+	;
+
+/***/ }
+
+});
 //# sourceMappingURL=VerticalFlex.js.map
