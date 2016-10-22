@@ -3,55 +3,15 @@
  * @author vivaxy
  */
 
-import React, { Component } from 'react';
+import render, { renderWithEntry } from '../library/render';
 
-import connect from '../library/connect';
-import render from '../library/render';
-import setTitle from '../library/setTitle';
+import Container from '../container/HorizontalFlex';
 
-import { HorizontalFlexBox, HorizontalFlexItem } from 'react-pianist/HorizontalFlex';
-import colors from 'react-pianist/colors';
+render(Container);
 
-@connect(state => ({}), {})
-class HorizontalFlex extends Component {
-
-    render () {
-
-        setTitle(`HorizontalFlex`);
-
-        return <HorizontalFlexBox style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-        }}>
-            <HorizontalFlexItem
-                flex={1}
-                style={{
-                    backgroundColor: colors.TURQUOISE,
-                    color: colors.WHITE,
-                    lineHeight: '50px',
-
-                }}
-            >this block auto expand</HorizontalFlexItem>
-            <HorizontalFlexItem
-                flex={1}
-                style={{
-                    backgroundColor: colors.EMERALD,
-                    color: colors.WHITE,
-                    lineHeight: '50px',
-                }}
-            >this block auto expand too</HorizontalFlexItem>
-            <HorizontalFlexItem
-                width={50}
-                style={{
-                    backgroundColor: colors.EMERALD,
-                    color: colors.WHITE,
-                    lineHeight: '50px',
-                }}
-            >this block will not expand</HorizontalFlexItem>
-        </HorizontalFlexBox>
-    }
-
+if (module.hot) {
+    module.hot.accept(`../container/HorizontalFlex`, () => {
+        const NewEntry = require(`../container/HorizontalFlex`).default;
+        renderWithEntry(NewEntry);
+    });
 }
-
-render(HorizontalFlex);

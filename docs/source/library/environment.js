@@ -9,7 +9,7 @@ let env = environmentConstant.PRODUCTION;
 
 let host = location.host;
 
-if (host === '127.0.0.1:8080') {
+if (host === '127.0.0.1:8085') {
     env = environmentConstant.DEVELOPMENT;
 }
 

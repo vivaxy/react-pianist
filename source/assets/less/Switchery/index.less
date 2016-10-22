@@ -3,7 +3,7 @@
  * @author vivaxy
  */
 
-.switchery {
+.react-pianist-switchery {
     display: block;
     position: relative;
     -webkit-appearance: none;
@@ -24,14 +24,14 @@
     transition: border 0.4s, box-shadow 0.4s;
 }
 
-.switchery:checked {
+.react-pianist-switchery:checked {
     border-color: rgb(76, 216, 100);
     background-color: rgb(76, 216, 100);
     box-shadow: rgb(76, 216, 100) 0 0 0 16px inset;
     transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
 }
 
-.switchery:before {
+.react-pianist-switchery:before {
     display: block;
     content: '';
     position: absolute;
@@ -45,11 +45,11 @@
     left: 0;
 }
 
-.switchery:checked:before {
+.react-pianist-switchery:checked:before {
     left: 20px;
 }
 
-.switchery:disabled {
+.react-pianist-switchery:disabled {
     opacity: 0.5;
     -webkit-tap-highlight-color: transparent;
 }

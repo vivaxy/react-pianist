@@ -8,7 +8,7 @@ import warning from 'warning';
 
 import i18n from '../config/i18n';
 import colors from '../colors';
-import styles from './Switchery.less';
+import '../assets/less/Switchery/index.less';
 
 export default class Switchery extends Component {
 
@@ -26,13 +26,13 @@ export default class Switchery extends Component {
         },
     };
 
-    render () {
+    render() {
 
         const {
             checked,
             disabled,
-            onChange,
             style,
+            onChange,
             ...otherProps,
         } = this.props;
 
@@ -41,17 +41,17 @@ export default class Switchery extends Component {
             disabled={disabled}
             checked={checked}
             style={style}
-            className={styles.switchery}
+            className={`react-pianist-switchery`}
             onChange={::this.onChange}
             {...otherProps}
         />
     }
 
-    onChange (e) {
+    onChange(e) {
         const {
             onChange,
         } = this.props;
 
-        onChange(e.target.checked);
+        return onChange(e.target.checked);
     }
 }

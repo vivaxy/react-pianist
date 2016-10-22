@@ -10,7 +10,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const DEVELOPMENT_PORT = 8080;
+const DEVELOPMENT_PORT = 8085;
 const SOURCE_PATH = 'docs/source';
 const RELEASE_PATH = 'docs/release';
 const DEVELOPMENT = 'development';
@@ -21,8 +21,16 @@ const BANNER = '@2016 vivaxy';
 
 const NODE_ENV = process.env.NODE_ENV || PRODUCTION;
 
+const jsLoader = {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loaders: [
+        'babel'
+    ]
+};
+
 // default webpack config
-let webpackConfig = {
+const webpackConfig = {
     entry: {
         [COMMON_CHUNK_NAME]: [
             'babel-polyfill',
@@ -39,25 +47,19 @@ let webpackConfig = {
     },
     module: {
         loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loaders: [
-                    'babel'
-                ]
-            },
+            jsLoader,
             {
                 test: /\.css$/,
                 loaders: [
                     'style',
-                    'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!',
+                    'css',
                 ]
             },
             {
                 test: /\.less$/,
                 loaders: [
                     'style',
-                    'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!',
+                    'css',
                     'less',
                 ]
             },
@@ -113,12 +115,15 @@ entryNameList.forEach((entryName) => {
 switch (NODE_ENV) {
     case DEVELOPMENT:
 
+        jsLoader.loaders.push('react-hot-loader/webpack');
+
         webpackConfig.output.publicPath = `/${RELEASE_PATH}/`;
 
         entryNameList.forEach((entryName) => {
             webpackConfig.entry[entryName].unshift('webpack-dev-server/client?http://127.0.0.1:' + DEVELOPMENT_PORT);
             webpackConfig.entry[entryName].unshift('webpack/hot/log-apply-result');
             webpackConfig.entry[entryName].unshift('webpack/hot/only-dev-server');
+            webpackConfig.entry[entryName].unshift('react-hot-loader/patch');
         });
 
         webpackConfig.devtool = 'eval';
@@ -144,7 +149,7 @@ switch (NODE_ENV) {
             }
         }));
         webpackConfig.plugins.push(new webpack.BannerPlugin(BANNER));
-        webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
+        // webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
         webpackConfig.plugins.push(new webpack.optimize.DedupePlugin());
         break;
     default:

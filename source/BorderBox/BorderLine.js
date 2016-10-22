@@ -19,7 +19,7 @@ export default class BorderLine extends Component {
 
     static defaultProps = {};
 
-    render () {
+    render() {
 
         const {
             position,

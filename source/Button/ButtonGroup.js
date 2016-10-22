@@ -8,6 +8,7 @@ import warning from 'warning';
 
 import i18n from '../config/i18n';
 import checkChildren from '../library/checkChildren';
+import childrenFilter from '../library/childrenFilter';
 import colors from '../colors';
 import Button from './Button';
 
@@ -22,7 +23,7 @@ export default class ButtonGroup extends Component {
         space: 20,
     };
 
-    render () {
+    render() {
 
         const defaultStyle = {
             textAlign: 'center',
@@ -40,7 +41,7 @@ export default class ButtonGroup extends Component {
             ...style,
         };
 
-        const childWithSpace = Children.map(children, (child) => {
+        const childWithSpace = Children.map(childrenFilter(children), (child) => {
                 return cloneElement(child, {
                     style: {
                         margin: `0 ${space}px`

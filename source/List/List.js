@@ -3,11 +3,12 @@
  * @author vivaxy
  */
 
-import React, { Component, PropTypes, cloneElement } from 'react';
+import React, { Component, PropTypes, cloneElement, Children } from 'react';
 
 import { BorderBox, BorderLine } from '../BorderBox';
 import Item from './Item';
 import checkChildren from '../library/checkChildren';
+import childrenFilter from '../library/childrenFilter';
 import colors from '../colors';
 
 export default class List extends Component {
@@ -18,7 +19,7 @@ export default class List extends Component {
 
     static defaultProps = {};
 
-    render () {
+    render() {
 
         const {
             children,
@@ -26,13 +27,15 @@ export default class List extends Component {
             ...otherProps
         } = this.props;
 
+        const _children = childrenFilter(children);
+
         return <BorderBox {...otherProps} style={{
             ...style,
         }}>
             <BorderLine position={'top'} color={colors.BORDER}/>
-            {children.map((child, index) => {
+            {Children.map(_children, (child, index) => {
 
-                const _isLast = index === children.length - 1;
+                const _isLast = index === _children.length - 1;
 
                 return cloneElement(child, {
                     _isLast,

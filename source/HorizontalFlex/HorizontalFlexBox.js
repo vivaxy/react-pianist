@@ -16,7 +16,7 @@ export default class HorizontalFlexBox extends Component {
 
     static defaultProps = {};
 
-    render () {
+    render() {
 
         const boxStyle = {
             display: '-webkit-box',

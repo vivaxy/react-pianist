@@ -16,7 +16,7 @@ export default class VerticalFlexBox extends Component {
 
     static defaultProps = {};
 
-    render () {
+    render() {
 
         const boxStyle = {
             display: '-webkit-box',

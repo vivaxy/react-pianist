@@ -3,48 +3,15 @@
  * @author vivaxy
  */
 
-import React, { Component } from 'react';
+import render, { renderWithEntry } from '../library/render';
 
-import connect from '../library/connect';
-import render from '../library/render';
-import setTitle from '../library/setTitle';
+import Container from '../container/VerticalFlex';
 
-import { VerticalFlexBox, VerticalFlexItem } from 'react-pianist/VerticalFlex';
-import colors from 'react-pianist/colors';
+render(Container);
 
-@connect(state => ({}), {})
-class VerticalFlex extends Component {
-
-    render () {
-
-        setTitle(`VerticalFlexBox`);
-
-        return <VerticalFlexBox style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-        }}>
-            <VerticalFlexItem
-                flex={1}
-                style={{
-                    backgroundColor: colors.TURQUOISE,
-                    color: colors.WHITE,
-                    textAlign: 'center',
-                    lineHeight: '50px',
-                }}
-            >this block auto expand</VerticalFlexItem>
-            <VerticalFlexItem
-                height={50}
-                style={{
-                    backgroundColor: colors.EMERALD,
-                    color: colors.WHITE,
-                    textAlign: 'center',
-                    lineHeight: '50px',
-                }}
-            >this block will not expand</VerticalFlexItem>
-        </VerticalFlexBox>
-    }
-
+if (module.hot) {
+    module.hot.accept(`../container/VerticalFlex`, () => {
+        const NewEntry = require(`../container/VerticalFlex`).default;
+        renderWithEntry(NewEntry);
+    });
 }
-
-render(VerticalFlex);

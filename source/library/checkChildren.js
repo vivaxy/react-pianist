@@ -5,12 +5,14 @@
 
 import { Children } from 'react';
 
+import childrenFilter from './childrenFilter';
+
 export default (ChildClass) => {
     return (props, propName, parentName) => {
         const prop = props[propName];
         let error = null;
-        Children.forEach(prop, (child) => {
-            if (child.type !== ChildClass) {
+        Children.forEach(childrenFilter(prop), (child) => {
+            if (child.type.name !== ChildClass.name) {
                 error = new Error(`Component '${parentName}' should only have children of '${ChildClass.name}' type`);
             }
         });
