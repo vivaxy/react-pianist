@@ -9,7 +9,7 @@
     "build:babel": "NODE_ENV=production babel ./source --out-dir ./build",
     "build:copy": "babel-node ./scripts/copy.js && cp -r ./source/assets ./build",
     "pub": "sh ./scripts/publish.sh",
-    "dev": "NODE_ENV=development webpack-dev-server --progress",
+    "start": "NODE_ENV=development webpack-dev-server --progress",
     "docs": "npm run docs:clean && npm run docs:webpack",
     "docs:clean": "rm -rf ./docs/release && mkdir ./docs/release",
     "docs:webpack": "webpack --progress --display-chunks --display-reasons --display-error-details --display-modules --display-exclude > ./docs/release/build.log"
@@ -40,6 +40,7 @@
     "babel-plugin-transform-class-properties": "^6.11.5",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-function-bind": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",

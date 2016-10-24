@@ -10,6 +10,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const DEVELOPMENT_IP = '0.0.0.0';
 const DEVELOPMENT_PORT = 8085;
 const SOURCE_PATH = 'docs/source';
 const RELEASE_PATH = 'docs/release';
@@ -33,13 +34,12 @@ const jsLoader = {
 const webpackConfig = {
     entry: {
         [COMMON_CHUNK_NAME]: [
-            'babel-polyfill',
             'whatwg-fetch',
             'react',
             'react-dom',
             'redux',
             'react-redux',
-        ]
+        ],
     },
     output: {
         path: path.resolve(__dirname, `${RELEASE_PATH}`),
@@ -120,7 +120,7 @@ switch (NODE_ENV) {
         webpackConfig.output.publicPath = `/${RELEASE_PATH}/`;
 
         entryNameList.forEach((entryName) => {
-            webpackConfig.entry[entryName].unshift('webpack-dev-server/client?http://127.0.0.1:' + DEVELOPMENT_PORT);
+            webpackConfig.entry[entryName].unshift(`webpack-dev-server/client?http://${DEVELOPMENT_IP}:` + DEVELOPMENT_PORT);
             webpackConfig.entry[entryName].unshift('webpack/hot/log-apply-result');
             webpackConfig.entry[entryName].unshift('webpack/hot/only-dev-server');
             webpackConfig.entry[entryName].unshift('react-hot-loader/patch');
@@ -131,6 +131,7 @@ switch (NODE_ENV) {
         webpackConfig.devServer = {
             hot: true,
             historyApiFallback: true,
+            host: DEVELOPMENT_IP,
             port: DEVELOPMENT_PORT,
             stats: {
                 colors: true
