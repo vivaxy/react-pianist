@@ -1,3 +1,7 @@
+# 0.0.9
+
+- [core] add babel-runtime support
+
 # 0.0.8
 
 - [core] fix css, less file not published
