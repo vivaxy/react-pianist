@@ -1023,10 +1023,6 @@ chokidar@^1.0.0, chokidar@^1.6.1:
   optionalDependencies:
     fsevents "^1.0.0"
 
-ci-info@^1.0.0:
-  version "1.0.0"
-  resolved "http://r.npm.sankuai.com/ci-info/download/ci-info-1.0.0.tgz#dc5285f2b4e251821683681c381c3388f46ec534"
-
 clap@^1.0.9:
   version "1.1.2"
   resolved "http://r.npm.sankuai.com/clap/download/clap-1.1.2.tgz#316545bf22229225a2cecaa6824cd2f56a9709ed"
@@ -1952,13 +1948,6 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "http://r.npm.sankuai.com/https-browserify/download/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
-husky@^0.11.7:
-  version "0.11.9"
-  resolved "http://r.npm.sankuai.com/husky/download/husky-0.11.9.tgz#28cd1dc16bffdca1d4d93592814e5f3c327b38ee"
-  dependencies:
-    is-ci "^1.0.9"
-    normalize-path "^1.0.0"
-
 iconv-lite@^0.4.5, iconv-lite@~0.4.13:
   version "0.4.15"
   resolved "http://r.npm.sankuai.com/iconv-lite/download/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
@@ -2037,12 +2026,6 @@ is-binary-path@^1.0.0:
 is-buffer@^1.0.2:
   version "1.1.4"
   resolved "http://r.npm.sankuai.com/is-buffer/download/is-buffer-1.1.4.tgz#cfc86ccd5dc5a52fa80489111c6920c457e2d98b"
-
-is-ci@^1.0.9:
-  version "1.0.10"
-  resolved "http://r.npm.sankuai.com/is-ci/download/is-ci-1.0.10.tgz#f739336b2632365061a9d48270cd56ae3369318e"
-  dependencies:
-    ci-info "^1.0.0"
 
 is-dotfile@^1.0.0:
   version "1.0.2"
@@ -2528,10 +2511,6 @@ nopt@~3.0.6:
   resolved "http://r.npm.sankuai.com/nopt/download/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
   dependencies:
     abbrev "1"
-
-normalize-path@^1.0.0:
-  version "1.0.0"
-  resolved "http://r.npm.sankuai.com/normalize-path/download/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"
 
 normalize-path@^2.0.1:
   version "2.0.1"
