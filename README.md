@@ -55,12 +55,12 @@ source code is in `./docs/source` directory. Built files is in `./docs/release`
 
 ### local development
 
-run `npm start`
-open `http://0.0.0.0:8085/docs/release/html/List.html` in browser
+run `yarn start`
+open `http://0.0.0.0:8085/html/List.html` in browser
 
 ### build release version
 
-run `npm run docs`
+run `yarn run docs`
 
 # REFERENCE
 

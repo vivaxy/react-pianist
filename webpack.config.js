@@ -5,15 +5,17 @@
 
 'use strict';
 
+const ip = require('ip');
 const glob = require('glob');
 const path = require('path');
 const webpack = require('webpack');
+const Visualizer = require('webpack-visualizer-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const DEVELOPMENT_IP = '0.0.0.0';
-const DEVELOPMENT_PORT = 8085;
-const SOURCE_PATH = 'docs/source';
-const RELEASE_PATH = 'docs/release';
+const DEVELOPMENT_IP = ip.address();
+const DEVELOPMENT_PORT = Math.floor(Math.random() * 65536);
+const SOURCE_PATH = 'docs-source';
+const RELEASE_PATH = 'docs';
 const DEVELOPMENT = 'development';
 const PRODUCTION = 'production';
 const COMMON_CHUNK_NAME = 'common';
@@ -26,58 +28,78 @@ const jsLoader = {
     test: /\.js$/,
     exclude: /node_modules/,
     loaders: [
-        'babel'
-    ]
+        'babel-loader',
+    ],
+};
+
+const cssLoader = {
+    test: /\.css$/,
+    loaders: [
+        'style-loader',
+        'css-loader',
+    ],
+};
+
+const lessLoader = {
+    test: /\.less$/,
+    loaders: [
+        'style-loader',
+        'css-loader',
+        'less-loader',
+    ],
+};
+
+const jsonLoader = {
+    test: /\.json$/,
+    loaders: [
+        'json-loader',
+    ],
+};
+
+const imageLoader = {
+    test: /\.(png|jpg|gif)$/,
+    loaders: [
+        'url-loader?limit=8192&name=image/[name]-[hash].[ext]',
+    ],
 };
 
 // default webpack config
 const webpackConfig = {
     entry: {
         [COMMON_CHUNK_NAME]: [
-            'whatwg-fetch',
-            'react',
-            'react-dom',
-            'redux',
-            'react-redux',
+            `babel-polyfill`,
+            `whatwg-fetch`,
+            `react`,
+            `react-dom`,
+            `redux`,
+            `react-redux`,
         ],
     },
     output: {
         path: path.resolve(__dirname, `${RELEASE_PATH}`),
-        filename: 'js/[name].js'
+        filename: 'js/[name].js',
+        publicPath: '../',
     },
     module: {
         loaders: [
             jsLoader,
-            {
-                test: /\.css$/,
-                loaders: [
-                    'style',
-                    'css',
-                ]
-            },
-            {
-                test: /\.less$/,
-                loaders: [
-                    'style',
-                    'css',
-                    'less',
-                ]
-            },
-            {
-                test: /\.json$/,
-                loader: 'json'
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                loader: 'url?limit=8192&name=image/[name]-[hash].[ext]'
-            }
-        ]
+            cssLoader,
+            lessLoader,
+            jsonLoader,
+            imageLoader,
+        ],
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: COMMON_CHUNK_NAME,
-            filename: 'js/[name].js'
-        })
+            filename: 'js/[name].js',
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(NODE_ENV),
+            },
+        }),
+        new Visualizer(),
     ],
     resolve: {
         alias: {
@@ -106,8 +128,8 @@ entryNameList.forEach((entryName) => {
         inject: 'body',
         chunks: [
             COMMON_CHUNK_NAME,
-            entryName
-        ]
+            entryName,
+        ],
     }));
 });
 
@@ -116,8 +138,6 @@ switch (NODE_ENV) {
     case DEVELOPMENT:
 
         jsLoader.loaders.push('react-hot-loader/webpack');
-
-        webpackConfig.output.publicPath = `/${RELEASE_PATH}/`;
 
         entryNameList.forEach((entryName) => {
             webpackConfig.entry[entryName].unshift(`webpack-dev-server/client?http://${DEVELOPMENT_IP}:` + DEVELOPMENT_PORT);
@@ -128,27 +148,11 @@ switch (NODE_ENV) {
 
         webpackConfig.devtool = 'eval';
 
-        webpackConfig.devServer = {
-            hot: true,
-            historyApiFallback: true,
-            host: DEVELOPMENT_IP,
-            port: DEVELOPMENT_PORT,
-            stats: {
-                colors: true
-            }
-        };
-
         webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 
         break;
     case PRODUCTION:
-        webpackConfig.output.publicPath = '../';
         webpackConfig.devtool = 'source-map';
-        webpackConfig.plugins.push(new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify(PRODUCTION)
-            }
-        }));
         webpackConfig.plugins.push(new webpack.BannerPlugin(BANNER));
         // webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
         webpackConfig.plugins.push(new webpack.optimize.DedupePlugin());
@@ -156,5 +160,9 @@ switch (NODE_ENV) {
     default:
         throw new Error('NODE_ENV not found, NODE_ENV=' + NODE_ENV);
 }
+
+webpackConfig.RELEASE_PATH = RELEASE_PATH;
+webpackConfig.DEVELOPMENT_IP = DEVELOPMENT_IP;
+webpackConfig.DEVELOPMENT_PORT = DEVELOPMENT_PORT;
 
 module.exports = webpackConfig;
