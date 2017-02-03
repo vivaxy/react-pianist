@@ -6,6 +6,8 @@
 - [core] reorder docs source and release folder
 - [core] add dev script, opens dev server in browser
 - [core] remove unused dependence, add missing dependence
+- [component] HorizontalFlex: improve compatible for old browsers
+- [component] VerticalFlex: improve compatible for old browsers
 - [docs] add references
 
 # 0.0.9

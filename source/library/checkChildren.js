@@ -3,19 +3,21 @@
  * @author vivaxy
  */
 
+import warning from 'warning';
 import { Children } from 'react';
 
+import * as i18n from '../config/i18n';
 import childrenFilter from './childrenFilter';
 
-export default (ChildClass) => {
+export default (childClass) => {
     return (props, propName, parentName) => {
-        const prop = props[propName];
-        let error = null;
-        Children.forEach(childrenFilter(prop), (child) => {
-            if (child.type.name !== ChildClass.name) {
-                error = new Error(`Component '${parentName}' should only have children of '${ChildClass.name}' type`);
+        const children = props[propName];
+        Children.forEach(childrenFilter(children), (child) => {
+            // support null as children
+            if (child.type.name !== childClass.name) {
+                warning(child.type.name === childClass.name, i18n.$INVALID_CHILDREN_TYPE(parentName, childClass.name));
             }
         });
-        return error;
+        return null;
     }
 }

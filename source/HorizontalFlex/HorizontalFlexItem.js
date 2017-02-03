@@ -4,9 +4,6 @@
  */
 
 import React, { Component, PropTypes } from 'react';
-import warning from 'warning';
-
-import * as i18n from '../config/i18n';
 
 export default class HorizontalFlexItem extends Component {
 
@@ -17,18 +14,7 @@ export default class HorizontalFlexItem extends Component {
 
     static defaultProps = {};
 
-    componentDidMount () {
-
-        const {
-            width,
-            flex,
-        } = this.props;
-
-        warning(flex === undefined || width === undefined, i18n.ONE_OR_THE_OTHER('flex', 'width'));
-        warning(flex !== undefined || width !== undefined, i18n.MUST_DEFINE_ONE('flex', 'width'));
-    }
-
-    render () {
+    render() {
 
         const {
             flex,
@@ -41,17 +27,26 @@ export default class HorizontalFlexItem extends Component {
         let childStyle = {};
 
         if (flex !== undefined) {
-            childStyle = {
-                WebkitBoxFlex: flex,
-                WebkitFlex: flex,
-                flex: flex,
-                width: 0,
-                ...style
-            };
+            if (flex === 0) {
+                childStyle = {
+                    WebkitBoxFlex: flex,
+                    WebkitFlex: '0 1 auto',
+                    flex: '0 1 auto',
+                    ...style,
+                }
+            } else {
+                childStyle = {
+                    WebkitBoxFlex: flex,
+                    WebkitFlex: flex,
+                    flex: flex,
+                    width: 0,
+                    ...style,
+                };
+            }
         } else {
             childStyle = {
                 width,
-                ...style
+                ...style,
             };
         }
 

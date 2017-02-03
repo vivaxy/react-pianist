@@ -3,41 +3,35 @@
  * @author vivaxy
  */
 
+import classNames from 'classnames';
 import React, { Component, PropTypes } from 'react';
-
 import checkChildren from '../library/checkChildren';
 import VerticalFlexItem from './VerticalFlexItem';
+
+import './VerticalFlexBox.less';
 
 export default class VerticalFlexBox extends Component {
 
     static propTypes = {
         children: checkChildren(VerticalFlexItem),
+        className: PropTypes.string,
     };
 
-    static defaultProps = {};
+    static defaultProps = {
+        className: '',
+    };
 
     render() {
 
-        const boxStyle = {
-            display: '-webkit-box',
-            display: '-webkit-flex',
-            display: 'flex',
-            WebkitBoxOrient: 'vertical',
-            WebkitBoxDirection: 'normal',
-            WebkitFlexDirection: 'column',
-            flexDirection: 'column',
-        };
-
         const {
             children,
-            style,
+            className,
             ...otherProps
         } = this.props;
 
-        return <div {...otherProps} style={{
-            ...boxStyle,
-            ...style,
-        }}>
+        const _className = classNames('pianist-vertical-flex-box', className);
+
+        return <div className={_className} {...otherProps}>
             {children}
         </div>
     }

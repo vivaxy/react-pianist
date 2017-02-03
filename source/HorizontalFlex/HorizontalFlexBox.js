@@ -3,37 +3,36 @@
  * @author vivaxy
  */
 
-import React, { Component, PropTypes } from 'react';
 
-import HorizontalFlexItem from './HorizontalFlexItem';
+import classNames from 'classnames';
+import React, { Component, PropTypes } from 'react';
 import checkChildren from '../library/checkChildren';
+import HorizontalFlexItem from './HorizontalFlexItem';
+
+import './HorizontalFlexBox.less';
 
 export default class HorizontalFlexBox extends Component {
 
     static propTypes = {
         children: checkChildren(HorizontalFlexItem),
+        className: PropTypes.string,
     };
 
-    static defaultProps = {};
+    static defaultProps = {
+        className: '',
+    };
 
     render() {
 
-        const boxStyle = {
-            display: '-webkit-box',
-            display: '-webkit-flex',
-            display: 'flex',
-        };
-
         const {
             children,
-            style,
+            className,
             ...otherProps
         } = this.props;
 
-        return <div {...otherProps} style={{
-            ...boxStyle,
-            ...style,
-        }}>
+        const _className = classNames('pianist-horizontal-flex-box', className);
+
+        return <div className={_className} {...otherProps}>
             {children}
         </div>
     }

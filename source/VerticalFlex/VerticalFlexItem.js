@@ -4,9 +4,8 @@
  */
 
 import React, { Component, PropTypes } from 'react';
-import warning from 'warning';
 
-import * as i18n from '../config/i18n';
+import '../assets/less/VerticalFlex/VerticalFlexItem.less';
 
 export default class VerticalFlexItem extends Component {
 
@@ -15,14 +14,9 @@ export default class VerticalFlexItem extends Component {
         height: PropTypes.number,
     };
 
-    componentDidMount () {
-        warning(this.props.flex === undefined || this.props.height === undefined, i18n.ONE_OR_THE_OTHER('flex', 'height'));
-        warning(this.props.flex !== undefined || this.props.height !== undefined, i18n.MUST_DEFINE_ONE('flex', 'height'));
-    }
-
     static defaultProps = {};
 
-    render () {
+    render() {
 
         const {
             flex,
@@ -35,13 +29,22 @@ export default class VerticalFlexItem extends Component {
         let childStyle = {};
 
         if (flex !== undefined) {
-            childStyle = {
-                WebkitBoxFlex: flex,
-                WebkitFlex: flex,
-                flex: flex,
-                height: 0,
-                ...style
-            };
+            if (flex === 0) {
+                childStyle = {
+                    WebkitBoxFlex: flex,
+                    WebkitFlex: '0 1 auto',
+                    flex: '0 1 auto',
+                    ...style,
+                }
+            } else {
+                childStyle = {
+                    WebkitBoxFlex: flex,
+                    WebkitFlex: flex,
+                    flex: flex,
+                    height: 0,
+                    ...style
+                };
+            }
         } else {
             childStyle = {
                 height,
