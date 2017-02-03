@@ -1,3 +1,13 @@
+# 0.0.10
+
+- [core] move assets files into its own directory
+- [core] add `.npmrc`
+- [core] add yarn
+- [core] reorder docs source and release folder
+- [core] add dev script, opens dev server in browser
+- [core] remove unused dependence, add missing dependence
+- [docs] add references
+
 # 0.0.9
 
 - [core] add babel-runtime support
