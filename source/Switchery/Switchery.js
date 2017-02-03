@@ -8,7 +8,7 @@ import warning from 'warning';
 
 import i18n from '../config/i18n';
 import colors from '../colors';
-import '../assets/less/Switchery/index.less';
+import './Switchery.less';
 
 export default class Switchery extends Component {
 
