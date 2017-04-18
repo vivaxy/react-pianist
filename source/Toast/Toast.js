@@ -3,7 +3,8 @@
  * @author vivaxy
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import sleep from '../library/sleep';
 import colors from '../colors';

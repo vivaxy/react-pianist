@@ -3,7 +3,8 @@
  * @author vivaxy
  */
 
-import React, { Component, PropTypes, cloneElement, Children } from 'react';
+import React, { Component, cloneElement, Children } from 'react';
+import PropTypes from 'prop-types';
 
 import { BorderBox, BorderLine } from '../BorderBox';
 import Item from './Item';

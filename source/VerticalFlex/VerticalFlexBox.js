@@ -4,7 +4,9 @@
  */
 
 import classNames from 'classnames';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import checkChildren from '../library/checkChildren';
 import VerticalFlexItem from './VerticalFlexItem';
 

@@ -1,5 +1,6 @@
 # 0.0.10
 
+- [core] upgrade `react`, `react-dom` up to 15.5, add `prop-types`
 - [core] move assets files into its own directory
 - [core] add `.npmrc`
 - [core] add yarn

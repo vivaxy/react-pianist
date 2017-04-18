@@ -8,7 +8,7 @@
     "build:clean": "rm -rf ./build",
     "build:babel": "NODE_ENV=production babel ./source --out-dir ./build",
     "build:copy": "babel-node ./scripts/copy",
-    "pub": "sh ./scripts/publish.sh",
+    "release": "sh ./scripts/publish.sh",
     "start": "NODE_ENV=development node ./scripts/dev",
     "docs": "npm run docs:clean && npm run docs:webpack && npm run docs:copy-index",
     "docs:clean": "rm -rf ./docs && mkdir ./docs",
@@ -52,8 +52,8 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "open": "^0.0.5",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.2",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
     "warning": "^3.0.0"
   }
 }
