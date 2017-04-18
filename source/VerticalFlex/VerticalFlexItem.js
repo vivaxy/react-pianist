@@ -6,8 +6,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import '../assets/less/VerticalFlex/VerticalFlexItem.less';
-
 export default class VerticalFlexItem extends Component {
 
     static propTypes = {

@@ -1,3 +1,7 @@
+# 0.0.11
+
+- [component] VerticalFlex: fix importing assets
+
 # 0.0.10
 
 - [core] upgrade `react`, `react-dom` up to 15.5, add `prop-types`
