@@ -66,14 +66,7 @@ const imageLoader = {
 // default webpack config
 const webpackConfig = {
     entry: {
-        [COMMON_CHUNK_NAME]: [
-            `babel-polyfill`,
-            `whatwg-fetch`,
-            `react`,
-            `react-dom`,
-            `redux`,
-            `react-redux`,
-        ],
+        [COMMON_CHUNK_NAME]: [],
     },
     output: {
         path: path.resolve(__dirname, `${RELEASE_PATH}`),
