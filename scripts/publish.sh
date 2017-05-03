@@ -4,4 +4,4 @@ npm run build
 cd build
 npm publish --registry="https://registry.npmjs.org/"
 cd ..
-git push origin master --tag
+git push origin master --follow-tags
