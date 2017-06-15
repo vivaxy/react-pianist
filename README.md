@@ -1,25 +1,25 @@
-# react-pianist
+# React Pianist
 
-react-pianist provides react components to speed up web development
+`react-pianist` provides react components to speed up web development.
 
-# DOCUMENTS
+# Documentations
 
 [react-pianist](https://vivaxy.github.io/react-pianist)
 
-# FEATURE
+# Feature
 
-## common
-- support custom style to every component
+## Common
+- Support custom style to every component.
 
-## components
+## Components
 - HorizontalFlex
 - VerticalFlex
 - BorderBox
 - Toast
 
-# ROADMAP
+# Roadmap
 
-## components
+## Components
 - text input, password input, number input
 - date input
 - file input
@@ -27,42 +27,16 @@ react-pianist provides react components to speed up web development
 - modal
 - etc.
 
-## documents
+## Documentations
 - demo pages
 - props descriptions
 - props setting test pages
 
-# HOW TO CONTRIBUTE
+# Contributing
 
-## source code
+[Contributing](CONTRIBUTING.md)
 
-Source code is in `./source` directory. Each component should has its own subdirectory.
-Each directory should has an `index.js`, which import js from this folder and export to the outside.
-
-### class name definition
-
-with `react-pianist-` as prefix
-
-### publish
-
-run `npm run publish`
-
-## docs
-
-## source code
-
-source code is in `./docs/source` directory. Built files is in `./docs/release`
-
-### local development
-
-run `yarn start`
-open `http://0.0.0.0:8085/html/List.html` in browser
-
-### build release version
-
-run `yarn run docs`
-
-# REFERENCE
+# Reference
 
 - https://mobile.ant.design/
 - http://www.material-ui.com/
