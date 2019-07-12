@@ -51,7 +51,7 @@
     "ip": "^1.1.4",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "open": "^0.0.5",
+    "open": "^6.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.2",
